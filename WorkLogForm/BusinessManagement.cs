@@ -117,11 +117,11 @@ namespace WorkLogForm
         }
         private void close_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变_副本; 
+            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Closeenter;//WorkLogForm.Properties.Resources.关闭渐变_副本; 
         }
         private void close_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变;
+            close_pictureBox.BackgroundImage = null;// WorkLogForm.Properties.Resources.关闭渐变;
         }
         #endregion
 
@@ -881,6 +881,23 @@ namespace WorkLogForm
             return false;
         }
         #endregion
+
+        private void min_pictureBox_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void min_pictureBox_MouseLeave_1(object sender, EventArgs e)
+        {
+            this.min_pictureBox.BackgroundImage = null;//WorkLogForm.Properties.Resources.Minenter;
+
+        }
+
+        private void min_pictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Minenter;
+
+        }
 
 
 

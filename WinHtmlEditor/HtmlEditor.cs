@@ -1927,9 +1927,16 @@ namespace WinHtmlEditor
 
         private void tsbNew_Click(object sender, EventArgs e)
         {
-            var button = (ToolStripButton)sender;
-            var command = (string)button.Tag;
-            ProcessCommand(command);
+            if (this.BodyInnerHTML != "")
+            {
+                if (MessageBox.Show("新建之后现有内容将消失,确定要新建空白页吗？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    var button = (ToolStripButton)sender;
+                    var command = (string)button.Tag;
+                    ProcessCommand(command);
+                }
+            }
+          
         }
 
         private void tsbOpen_Click(object sender, EventArgs e)
@@ -2325,16 +2332,28 @@ namespace WinHtmlEditor
             {
                 var range = GetTextRange();
                 Debug.Assert(range != null, "range != null");
-                range.pasteHTML(!eventObject.shiftKey ? "<br>" : "<P>&nbsp;</P>");
-                range.collapse();
+                bool a = eventObject.shiftKey;
+                if (!a)
+                {
+                    range.pasteHTML("<br>");
+                    range.moveStart("character", 0);
+                }
+                else
+                {
+                    range.pasteHTML("<p>&nbsp;</p>");
+                }
+
+                range.collapse(true);
                 range.@select();
+                
             }
             if (!eventObject.shiftKey)
             {
-                eventObject.returnValue = SetupKeyListener();
+                //eventObject.returnValue = SetupKeyListener();
             }
 
-            eventObject.returnValue = true;
+            eventObject.returnValue = false;
+           
 
         } //DocumentKeyPress
 

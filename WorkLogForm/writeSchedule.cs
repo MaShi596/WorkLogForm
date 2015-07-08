@@ -57,6 +57,8 @@ namespace WorkLogForm
             }
             this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width / 2 - this.Width / 2, Screen.PrimaryScreen.WorkingArea.Height / 2 - this.Height / 2);
             initData();
+            this.dateTimePicker2.Value = DateTime.Now;
+            this.dateTimePicker3.Value = DateTime.Now;
         }
         private void initData()
         {
@@ -386,6 +388,16 @@ namespace WorkLogForm
 
             MessageBox.Show("保存成功!");
 
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            this.dateTimePicker1.Value = this.dateTimePicker2.Value;
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            this.dateTimePicker4.Value = this.dateTimePicker3.Value;
         }
 
 

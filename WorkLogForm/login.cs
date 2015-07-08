@@ -94,9 +94,13 @@ namespace WorkLogForm
                     if (File.Exists(address))
                     {
 
-                        string filename = address;//如果不是png类型，须转换
-                        System.Drawing.Bitmap ybitmap = new System.Drawing.Bitmap(filename);
-                        this.pictureBoxOfHeadIcon.BackgroundImage = ybitmap;
+                        //string filename = address;//如果不是png类型，须转换
+                        //System.Drawing.Bitmap ybitmap = new System.Drawing.Bitmap(filename);
+
+                        this.pictureBoxOfHeadIcon.BackgroundImage = CommonClass.ReadPictureFromStream.GetFile(address);//ybitmap;
+                    
+                    
+                    
                     }
 
                     #endregion

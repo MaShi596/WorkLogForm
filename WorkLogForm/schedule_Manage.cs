@@ -119,11 +119,11 @@ namespace WorkLogForm
         #region 最小化关闭按钮
         private void min_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化_副本;
+            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Minenter;
         }
         private void min_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化渐变;
+            min_pictureBox.BackgroundImage = null;//WorkLogForm.Properties.Resources.最小化渐变;
         }
         private void min_pictureBox_Click(object sender, EventArgs e)
         {
@@ -135,11 +135,11 @@ namespace WorkLogForm
         }
         private void close_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变_副本;
+            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Closeenter;
         }
         private void close_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变;
+            close_pictureBox.BackgroundImage = null;// WorkLogForm.Properties.Resources.关闭渐变;
         }
         #endregion
 
@@ -536,6 +536,9 @@ namespace WorkLogForm
             panel2.Visible = false;
             panel3.Visible = false;
             this.label1.Text = "个人日程";
+            this.panel1_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.个人日程_;
+            this.panel2_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.分享日程;
+            this.panel3_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.员工日程;
 
         }
 
@@ -545,6 +548,9 @@ namespace WorkLogForm
             panel2.Visible = true;
             panel3.Visible = false;
             this.label1.Text = "分享日程";
+            this.panel1_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.个人日程;
+            this.panel2_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.分享日程_;
+            this.panel3_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.员工日程;
         }
 
         private void panel3_pictureBox_Click(object sender, EventArgs e)
@@ -553,6 +559,9 @@ namespace WorkLogForm
             panel2.Visible = false;
             panel3.Visible = true;
             this.label1.Text = "员工日程";
+            this.panel1_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.个人日程;
+            this.panel2_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.分享日程;
+            this.panel3_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.员工日程_;
         }
 
 

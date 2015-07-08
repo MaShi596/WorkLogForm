@@ -49,8 +49,10 @@ namespace WorkLogForm
         #endregion
 
 
+        int TheMaxSuiBiID;
+
+
         CommonClass.FromHide fromhide;
-        
         
         public login loginForm;
 
@@ -258,7 +260,9 @@ namespace WorkLogForm
             
             listen_ri_cheng();//监测日程表变动
             backgroundWorkerOfDownPicture.RunWorkerAsync();
-           
+            string theMaxSuibiId = IniReadAndWrite.IniReadValue("SuiBiCount", "TheMaxSuiBiID");
+            TheMaxSuiBiID = int.Parse(theMaxSuibiId);
+            //this.backgroundWorkerrefreshSuibiCount.RunWorkerAsync();
             //LoadUnReadMessage();
             //initialData();
             //LoadUserList();
@@ -280,7 +284,14 @@ namespace WorkLogForm
 
         private void backgroundWorkerLoadUserList_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            LoaduserAndDeptInUserlist();
+        }
 
+        void LoaduserAndDeptInUserlist()
+        {
+
+            this.userlistDept.Clear();
+            this.userlistUser.Clear();
             string sql = "select u from WkTDept u";
             IList depts = baseService.loadEntityList(sql);
             if (depts != null && depts.Count > 0)
@@ -299,10 +310,8 @@ namespace WorkLogForm
                     this.userlistUser.Add(u);
                 }
             }
-
-           
+        
         }
-
 
         private void backgroundWorkerLoad_UserList(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
@@ -518,7 +527,7 @@ namespace WorkLogForm
             }
             else
             {
-
+               
                 this.pictureBoxOfInstantMessenger.Cursor = Cursors.WaitCursor;
                 SetTheContent5ButtonIsGray();
                 SetTheContent4PanelIsUnvisible();
@@ -535,32 +544,25 @@ namespace WorkLogForm
         private void LoadHeadIcon()
         {
             //string address = CommonStaticParameter.ICONS + @"\" + this.user.Id.ToString() + ".png";
-            string[] files = Directory.GetFiles(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", this.user.Id.ToString() + "myicon" + "*.png", System.IO.SearchOption.AllDirectories);
-            if (files.Length > 0)
+            //string[] files = Directory.GetFiles(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", this.user.Id.ToString() + "myicon" + "*.png", System.IO.SearchOption.AllDirectories);
+            string address = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons" + @"\" + this.user.Id.ToString() + ".png";
+            if (File.Exists(address))
             {
-                if (File.Exists(files[files.Length -1]))
-                {
-                    string filename = files[files.Length - 1];
-                    System.Drawing.Bitmap ybitmap = new System.Drawing.Bitmap(filename);
-                    this.pictureBoxofHeadIcon.BackgroundImage = ybitmap;
-                }
+                this.pictureBoxofHeadIcon.BackgroundImage = CommonClass.ReadPictureFromStream.GetFile(address);// Image.FromStream(new MemoryStream(fileBytes));
             }
-           
+
+
             else
             {
                 this.pictureBoxofHeadIcon.BackgroundImage = WorkLogForm.Properties.Resources.AutoIconBigWhite;
             }
+           
         }
+
+
         public void RefreshHeaderPic()
         {
-            string address = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons" + @"\" + this.user.Id.ToString() + ".png";
-            string[] files = Directory.GetFiles(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", this.user.Id.ToString() + "__" + "*.png", System.IO.SearchOption.AllDirectories);
-            if (files.Length > 0)
-            {
-                string myicon = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons" + @"\" + this.user.Id.ToString() + "myicon" + DateTime.Now.Ticks.ToString() + ".png";
-                File.Copy(files[0], myicon, true);
-                this.pictureBoxofHeadIcon.BackgroundImage = new Bitmap(myicon);
-            }
+            LoadHeadIcon();
         }
 
         #endregion
@@ -958,7 +960,8 @@ namespace WorkLogForm
             {
                 SetTheContent5ButtonIsGray();
                 SetTheContent4PanelIsUnvisible();
-
+                this.messageCountLabelOfSuiBi.MessageCount = 0;
+                IniReadAndWrite.IniWriteValue("SuiBiCount", "TheMaxSuiBiID", TheMaxSuiBiID.ToString());
                 RefreshSuiBi();
 
                 tong_xun_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.随笔白;
@@ -1439,6 +1442,7 @@ namespace WorkLogForm
             {
                 this.backgroundWorkerOfDownPicture.RunWorkerAsync();
             }
+          
         }
         /// <summary>
         ///自动更新 //更新之后无法记录看到什么位置了，会回到最顶端 暂时搁置
@@ -1475,17 +1479,19 @@ namespace WorkLogForm
                             if (fi.CreationTime.Ticks < fileUpDown.GetFileModifyDateTime(obj[0].ToString() + ".png", "Iconpics").Ticks)//与本地图片比对时间 本地创建时间晚于服务器则下载
                             {
                                 //fi.Delete();
-                                string[] files = Directory.GetFiles(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", obj[0].ToString() + "__" + "*.png", System.IO.SearchOption.AllDirectories);
-                                if (files.Length > 0) //删除原来的临时文件
-                                {
-                                    for (int i = 0; i < files.Length;i++ )
-                                    {
-                                        FileInfo oldfi = new FileInfo(files[i]);
-                                        oldfi.Delete();
-                                    }
-                                }
+                                //string[] files = Directory.GetFiles(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", obj[0].ToString() + "__" + "*.png", System.IO.SearchOption.AllDirectories);
+                                //if (files.Length > 0) //删除原来的临时文件
+                                //{
+                                //    for (int i = 0; i < files.Length;i++ )
+                                //    {
+                                //        FileInfo oldfi = new FileInfo(files[i]);
+                                //        oldfi.Delete();
+                                //    }
+                                //}
 
-                                fileUpDown.Download(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", obj[0].ToString() +"__"+DateTime.Now.Ticks.ToString()+".png", "Iconpics");
+                                FileInfo oldfi = new FileInfo(address);
+                                oldfi.Delete();
+                                fileUpDown.Download(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", obj[0].ToString()+".png", "Iconpics");
                             }
                         }
                         else
@@ -1495,10 +1501,15 @@ namespace WorkLogForm
                     }
                 }
             }
+
+            LoaduserAndDeptInUserlist();
+
+
         }
         private void backgroundWorkerOfDownPicture_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            //MessageBox.Show("");
+            LoadHeadIcon();
+            Showcontacts();
         }
 
 
@@ -2075,6 +2086,9 @@ namespace WorkLogForm
                         }
                     }
                 }
+                this.backgroundWorkerrefreshSuibiCount.Dispose();
+                //string theMaxSuibiId = IniReadAndWrite.IniReadValue("SuiBiCount", "TheMaxSuiBiID");
+                IniReadAndWrite.IniWriteValue("SuiBiCount", "TheMaxSuiBiID", TheMaxSuiBiID.ToString());
             }
             catch 
             {
@@ -2707,6 +2721,8 @@ namespace WorkLogForm
 
       
 
+      
+
 
 
 
@@ -2719,6 +2735,93 @@ namespace WorkLogForm
         #endregion
 
 
+
+      
+
+
+        #region 随笔条数推送
+
+
+
+        int theSuiBiCount;
+        
+        private void backgroundWorkerrefreshSuibiCount_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            //更新显示数目
+            //this.messageCountLabelOfSuiBi.MessageCount = theSuiBiCount;
+            //backgroundWorkerrefreshSuibiCount.
+            //this.backgroundWorkerrefreshSuibiCount.RunWorkerAsync();
+        }
+
+        private void backgroundWorkerrefreshSuibiCount_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            //string theMaxSuibiId = IniReadAndWrite.IniReadValue("SuiBiCount", "TheMaxSuiBiID");
+            //string sql = "select u from SuiBi u where u.State = " + (int)IEntity.stateEnum.Normal + " and u.Id > " + theMaxSuibiId;// TheMaxSuiBiID.ToString();
+            //IList i = baseService.loadEntityList(sql);
+
+            //if (i != null && i.Count > 0)
+            //{
+            //    SuiBi s = (SuiBi)i[i.Count - 1];
+            //    TheMaxSuiBiID = int.Parse(s.Id.ToString());
+            //    theSuiBiCount = i.Count;
+            //}
+            //else
+            //{
+            //    theSuiBiCount = 0;
+            //}
+            
+
+
+            //string theMaxSuibiId = IniReadAndWrite.IniReadValue("SuiBiCount", "TheMaxSuiBiID");
+
+
+
+            //查询随笔条数
+
+
+
+            //SuiBi w = new SuiBi();
+            //w.State
+
+            //记录最大的Id到Setting文件中
+
+
+
+            //查询比记录的ID大的文件随笔数量
+
+
+        }
+
+
+
+
+
+
+        #endregion
+
+        private void timerOfSuiBiCount_Tick(object sender, EventArgs e)
+        {
+            string theMaxSuibiId = IniReadAndWrite.IniReadValue("SuiBiCount", "TheMaxSuiBiID");
+            string sql = "select u from SuiBi u where u.State = " + (int)IEntity.stateEnum.Normal + " and u.Id > " + theMaxSuibiId;// TheMaxSuiBiID.ToString();
+            IList i = baseService.loadEntityList(sql);
+
+            if (i != null && i.Count > 0)
+            {
+                SuiBi s = (SuiBi)i[i.Count - 1];
+                TheMaxSuiBiID = int.Parse(s.Id.ToString());
+                theSuiBiCount = i.Count;
+            }
+            else
+            {
+                theSuiBiCount = 0;
+            }
+
+
+            //更新显示数目
+            this.messageCountLabelOfSuiBi.MessageCount = theSuiBiCount;
+            //backgroundWorkerrefreshSuibiCount.
+            //this.backgroundWorkerrefreshSuibiCount.RunWorkerAsync();
+        }
 
     }
 }

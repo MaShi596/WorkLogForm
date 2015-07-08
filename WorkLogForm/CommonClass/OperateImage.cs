@@ -36,7 +36,7 @@ namespace WorkLogForm.CommonClass
             //原图宽高均小于模版，不作处理，直接保存
             if (initImage.Width <= side && initImage.Height <= side)
             {
-                initImage.Save(fileSaveUrl, System.Drawing.Imaging.ImageFormat.Jpeg);
+                initImage.Save(fileSaveUrl, System.Drawing.Imaging.ImageFormat.Png);
             }
             else
             {

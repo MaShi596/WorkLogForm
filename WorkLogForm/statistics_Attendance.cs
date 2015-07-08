@@ -50,11 +50,11 @@ namespace WorkLogForm
         #region 最小化关闭按钮
         private void min_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化_副本;
+            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Minenter;
         }
         private void min_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化渐变;
+            min_pictureBox.BackgroundImage = null;
         }
         private void min_pictureBox_Click(object sender, EventArgs e)
         {
@@ -66,11 +66,11 @@ namespace WorkLogForm
         }
         private void close_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变_副本;
+            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Closeenter;
         }
         private void close_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变;
+            close_pictureBox.BackgroundImage = null;
         }
         #endregion
         #region 窗体移动代码
@@ -112,6 +112,7 @@ namespace WorkLogForm
             IList deptList = baseService.loadEntityList("from WkTDept");
             if (deptList != null && deptList.Count > 0)
             {
+                comboBox1.Items.Add("选择全部……");
                 foreach (WkTDept dept in deptList)
                 {
                     if (!dept.KdName.Contains("组织结构"))
@@ -525,7 +526,7 @@ namespace WorkLogForm
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         #region 综合统计页面
-        private void initListView(ListView listView, Hashtable userList)
+        private void initListView(DataGridView listView, Hashtable userList)
         {
             if (userList != null && userList.Count > 0)
             {
@@ -533,38 +534,57 @@ namespace WorkLogForm
                 foreach (Int64 key in userList.Keys)
                 {
                     List<object> o = (List<object>)userList[key];
-                    ListViewItem item = new ListViewItem();
-                    item.Text = i.ToString();
-                    ListViewItem.ListViewSubItem name = new ListViewItem.ListViewSubItem();
-                    ListViewItem.ListViewSubItem ying_shang_ban = new ListViewItem.ListViewSubItem();
-                    ListViewItem.ListViewSubItem shi_chu_qin = new ListViewItem.ListViewSubItem();
-                    ListViewItem.ListViewSubItem jia_ban = new ListViewItem.ListViewSubItem();
-                    ListViewItem.ListViewSubItem zhi_ban = new ListViewItem.ListViewSubItem();
-                    ListViewItem.ListViewSubItem qing_jia = new ListViewItem.ListViewSubItem();
-                    ListViewItem.ListViewSubItem wei_chu_qin = new ListViewItem.ListViewSubItem();
-                    name.Text = o[0].ToString().Trim();
-                    ying_shang_ban.Text = o[1].ToString().Trim();
-                    shi_chu_qin.Text = o[2].ToString().Trim();
-                    jia_ban.Text = o[3].ToString().Trim();
-                    zhi_ban.Text = o[4].ToString().Trim();
-                    qing_jia.Text = o[5].ToString().Trim();
-                    //wei_chu_qin.Text = o[6].ToString().Trim();
-                    item.SubItems.Add(name);
-                    item.SubItems.Add(ying_shang_ban);
-                    item.SubItems.Add(shi_chu_qin);
-                    //item.SubItems.Add(jia_ban);
-                    //item.SubItems.Add(zhi_ban);
-                    item.SubItems.Add(qing_jia);
-                    //item.SubItems.Add(wei_chu_qin);
-                    listView.Items.Add(item);
-                    i++;
+                    //ListViewItem item = new ListViewItem();
+                    //item.Text = i.ToString();
+                    //ListViewItem.ListViewSubItem name = new ListViewItem.ListViewSubItem();
+                    //ListViewItem.ListViewSubItem ying_shang_ban = new ListViewItem.ListViewSubItem();
+                    //ListViewItem.ListViewSubItem shi_chu_qin = new ListViewItem.ListViewSubItem();
+                    //ListViewItem.ListViewSubItem jia_ban = new ListViewItem.ListViewSubItem();
+                    //ListViewItem.ListViewSubItem zhi_ban = new ListViewItem.ListViewSubItem();
+                    //ListViewItem.ListViewSubItem qing_jia = new ListViewItem.ListViewSubItem();
+                    //ListViewItem.ListViewSubItem wei_chu_qin = new ListViewItem.ListViewSubItem();
+                    //ListViewItem.ListViewSubItem Dept = new ListViewItem.ListViewSubItem();
+                    //name.Text = o[0].ToString().Trim();
+                    //ying_shang_ban.Text = o[1].ToString().Trim();
+                    //shi_chu_qin.Text = o[2].ToString().Trim();
+                    //jia_ban.Text = o[3].ToString().Trim();
+                    //zhi_ban.Text = o[4].ToString().Trim();
+                    //qing_jia.Text = o[5].ToString().Trim();
+                    //Dept.Text = o[6].ToString().Trim();
+                    ////wei_chu_qin.Text = o[6].ToString().Trim();
+                    //item.SubItems.Add(name);
+                    //item.SubItems.Add(Dept);
+                    //item.SubItems.Add(ying_shang_ban);
+                    
+                    //item.SubItems.Add(shi_chu_qin);
+                    ////item.SubItems.Add(jia_ban);
+                    ////item.SubItems.Add(zhi_ban);
+                    //item.SubItems.Add(qing_jia);
+                    
+                    ////item.SubItems.Add(wei_chu_qin);
+                    //listView.Items.Add(item);
+                    //i++;
+
+                    this.dataGridView1.Rows.Add(i, o[0].ToString().Trim(), o[6].ToString().Trim(), o[1].ToString().Trim(), o[2].ToString().Trim(), o[5].ToString().Trim());
+
+
                 }
             }
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            this.button2.Cursor = Cursors.WaitCursor;
+            LoadData();
+            this.button2.Cursor = Cursors.Hand;
+        }
+        #endregion
+
+
+        void LoadData()
+        {
+
             Hashtable ht = new Hashtable();
-            IList all_day = baseService.loadEntityList("select u from WkTUser u left join u.Kdid dept left join u.UserRole r where r.KrDESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and u.KuName like '%" + textBox2.Text.Trim() + "%' and dept.KdName like '%" + (comboBox1.Text.Trim() != "请选择" ? comboBox1.Text.Trim() : "") + "%'");
+            IList all_day = baseService.loadEntityList("select u from WkTUser u left join u.Kdid dept left join u.UserRole r where r.KrDESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and u.KuName like '%" + textBox2.Text.Trim() + "%' and dept.KdName like '%" + (comboBox1.Text.Trim() != "选择全部……" ? comboBox1.Text.Trim() : "") + "%'");
             int allDay = CNDate.getWorkDayNum(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date).Count;
             if (all_day != null && all_day.Count > 0)
             {
@@ -577,10 +597,11 @@ namespace WorkLogForm
                     dayNum.Add(0);
                     dayNum.Add(0);
                     dayNum.Add(0);
+                    dayNum.Add(u.Kdid.KdName.Trim());
                     ht.Add(u.Id, dayNum);
                 }
             }
-            string sql = "select u.Ku_Id,count(attend.id) from LOG_T_ATTENDANCE attend left join WK_T_USER u on u.ku_id=attend.WkTUserId,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "请选择" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and attend.SignDate>=" + dateTimePicker1.Value.Date.Ticks + " and attend.SignDate<=" + dateTimePicker2.Value.Date.Ticks + "group by u.ku_id";
+            string sql = "select u.Ku_Id,count(attend.id) from LOG_T_ATTENDANCE attend left join WK_T_USER u on u.ku_id=attend.WkTUserId,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "选择全部……" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and attend.SignDate>=" + dateTimePicker1.Value.Date.Ticks + " and attend.SignDate<=" + dateTimePicker2.Value.Date.Ticks + "group by u.ku_id";
             IList chu_qin = baseService.ExecuteSQL(sql);
             if (chu_qin != null && chu_qin.Count > 0)
             {
@@ -596,64 +617,107 @@ namespace WorkLogForm
                     {
                         return;
                     }
-                    
+
                 }
             }
             /////////////////////////////////////////////////////////////////////////////////////////
-            string jb_sql = "select u.Ku_Id,sum(case when attend.STARTTIME>" + dateTimePicker1.Value.Date.Ticks + " then (case when attend.ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.ENDTIME-attend.STARTTIME else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-attend.STARTTIME end) else (case when attend.ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.ENDTIME-" + dateTimePicker1.Value.Date.Ticks + " else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-" + dateTimePicker1.Value.Date.Ticks + " end) end) from LOG_T_WORKOVERTIME attend left join WORKOVERTIME_M_WkTUser mu on mu.WORKMAN_ID=attend.id left join WK_T_USER u on mu.ku_id=u.KU_ID,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "请选择" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and ((attend.STARTTIME<=" + dateTimePicker1.Value.Date.Ticks + " and attend.ENDTIME>=" + dateTimePicker1.Value.Date.Ticks + ") or (attend.STARTTIME>=" + dateTimePicker1.Value.Date.Ticks + " and attend.ENDTIME<=" + dateTimePicker2.Value.Date.Ticks + ") or (attend.STARTTIME<=" + dateTimePicker2.Value.Date.Ticks + " and attend.ENDTIME>=" + dateTimePicker2.Value.Date.Ticks + ")) group by u.ku_id";
-            IList jia_ban = baseService.ExecuteSQL(jb_sql);
-            if (jia_ban != null && jia_ban.Count > 0)
-            {
-                foreach (Object[] o in jia_ban)
-                {
-                    List<object> dayNum = (List<object>)ht[Convert.ToInt64(o[0])];
-                    dayNum[3] = Convert.ToInt64(o[1]) / 864000000000;
-                    ht[Convert.ToInt64(o[0])] = dayNum;
-                }
-            }
-            string zb_sql = "select u.Ku_Id,count(attend.id) from LOG_T_ONDUTY attend left join ONDUTYTIME_M_WkTUser mu on mu.ONDUTY_STAFFID=attend.id left join WK_T_USER u on u.ku_id=mu.KU_ID,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "请选择" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and attend.ONDUTY_TIME>=" + dateTimePicker1.Value.Date.Ticks + " and attend.ONDUTY_TIME<=" + dateTimePicker2.Value.Date.Ticks + "group by u.ku_id";
-            IList zhi_ban = baseService.ExecuteSQL(zb_sql);
-            if (zhi_ban != null && zhi_ban.Count > 0)
-            {
-                foreach (Object[] o in zhi_ban)
-                {
-                    List<object> dayNum = (List<object>)ht[Convert.ToInt64(o[0])];
-                    dayNum[4] = (int)o[1];
-                    ht[Convert.ToInt64(o[0])] = dayNum;
-                }
-            }
-            
-            string qj_sql = "select u.Ku_Id,sum(case when attend.LEAVE_STARTTIME>" + dateTimePicker1.Value.Date.Ticks + " then (case when attend.LEAVE_ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.LEAVE_ENDTIME-attend.LEAVE_STARTTIME else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-attend.LEAVE_STARTTIME end) else (case when attend.LEAVE_ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.LEAVE_ENDTIME-" + dateTimePicker1.Value.Date.Ticks + " else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-" + dateTimePicker1.Value.Date.Ticks + " end) end) from LOG_T_LEAVE attend left join WK_T_USER u on u.ku_id=attend.KU_ID,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where attend.State="+(int)Attendance.stateEnum.Normal+" and u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='"+CommonClass.CommonStaticParameter.RoleDesc+"' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "请选择" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and ((attend.LEAVE_STARTTIME<=" + dateTimePicker1.Value.Date.Ticks + " and attend.LEAVE_ENDTIME>=" + dateTimePicker1.Value.Date.Ticks + ") or (attend.LEAVE_STARTTIME>=" + dateTimePicker1.Value.Date.Ticks + " and attend.LEAVE_ENDTIME<=" + dateTimePicker2.Value.Date.Ticks + ") or (attend.LEAVE_STARTTIME<=" + dateTimePicker2.Value.Date.Ticks + " and attend.LEAVE_ENDTIME>=" + dateTimePicker2.Value.Date.Ticks + ")) group by u.ku_id";
+            //加班天数
+            //string jb_sql = "select u.Ku_Id,sum(case when attend.STARTTIME>" + dateTimePicker1.Value.Date.Ticks + " then (case when attend.ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.ENDTIME-attend.STARTTIME else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-attend.STARTTIME end) else (case when attend.ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.ENDTIME-" + dateTimePicker1.Value.Date.Ticks + " else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-" + dateTimePicker1.Value.Date.Ticks + " end) end) from LOG_T_WORKOVERTIME attend left join WORKOVERTIME_M_WkTUser mu on mu.WORKMAN_ID=attend.id left join WK_T_USER u on mu.ku_id=u.KU_ID,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "选择全部……" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and ((attend.STARTTIME<=" + dateTimePicker1.Value.Date.Ticks + " and attend.ENDTIME>=" + dateTimePicker1.Value.Date.Ticks + ") or (attend.STARTTIME>=" + dateTimePicker1.Value.Date.Ticks + " and attend.ENDTIME<=" + dateTimePicker2.Value.Date.Ticks + ") or (attend.STARTTIME<=" + dateTimePicker2.Value.Date.Ticks + " and attend.ENDTIME>=" + dateTimePicker2.Value.Date.Ticks + ")) group by u.ku_id";
+            //IList jia_ban = baseService.ExecuteSQL(jb_sql);
+            //if (jia_ban != null && jia_ban.Count > 0)
+            //{
+            //    foreach (Object[] o in jia_ban)
+            //    {
+            //        List<object> dayNum = (List<object>)ht[Convert.ToInt64(o[0])];
+            //        dayNum[3] = Convert.ToInt64(o[1]) / 864000000000;
+            //        ht[Convert.ToInt64(o[0])] = dayNum;
+            //    }
+            //}
+            //值班天数
+            //string zb_sql = "select u.Ku_Id,count(attend.id) from LOG_T_ONDUTY attend left join ONDUTYTIME_M_WkTUser mu on mu.ONDUTY_STAFFID=attend.id left join WK_T_USER u on u.ku_id=mu.KU_ID,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "选择全部……" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and attend.ONDUTY_TIME>=" + dateTimePicker1.Value.Date.Ticks + " and attend.ONDUTY_TIME<=" + dateTimePicker2.Value.Date.Ticks + "group by u.ku_id";
+            //IList zhi_ban = baseService.ExecuteSQL(zb_sql);
+            //if (zhi_ban != null && zhi_ban.Count > 0)
+            //{
+            //    foreach (Object[] o in zhi_ban)
+            //    {
+            //        List<object> dayNum = (List<object>)ht[Convert.ToInt64(o[0])];
+            //        dayNum[4] = (int)o[1];
+            //        ht[Convert.ToInt64(o[0])] = dayNum;
+            //    }
+            //}
+            //请假天数
+            string qj_sql = "select u.Ku_Id,sum(case when attend.LEAVE_STARTTIME>" + dateTimePicker1.Value.Date.Ticks + " then (case when attend.LEAVE_ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.LEAVE_ENDTIME-attend.LEAVE_STARTTIME else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-attend.LEAVE_STARTTIME end) else (case when attend.LEAVE_ENDTIME<" + dateTimePicker2.Value.Date.Ticks + " then " + new DateTime(1, 1, 2).Date.Ticks + "+attend.LEAVE_ENDTIME-" + dateTimePicker1.Value.Date.Ticks + " else " + new DateTime(1, 1, 2).Date.Ticks + "+" + dateTimePicker2.Value.Date.Ticks + "-" + dateTimePicker1.Value.Date.Ticks + " end) end) from LOG_T_LEAVE attend left join WK_T_USER u on u.ku_id=attend.KU_ID,WK_T_DEPT dept,Wk_T_UseRole ur,Wk_T_Role r where attend.State=" + (int)Attendance.stateEnum.Normal + " and u.KU_ID=ur.KU_ID and ur.KR_ID=r.KR_ID and r.KR_DESC='" + CommonClass.CommonStaticParameter.RoleDesc + "' and dept.kd_id=u.kd_id and dept.kd_name like '%" + (comboBox1.Text.Trim() != "选择全部……" ? comboBox1.Text.Trim() : "") + "%' and u.ku_Name like '%" + textBox2.Text.Trim() + "%' and ((attend.LEAVE_STARTTIME<=" + dateTimePicker1.Value.Date.Ticks + " and attend.LEAVE_ENDTIME>=" + dateTimePicker1.Value.Date.Ticks + ") or (attend.LEAVE_STARTTIME>=" + dateTimePicker1.Value.Date.Ticks + " and attend.LEAVE_ENDTIME<=" + dateTimePicker2.Value.Date.Ticks + ") or (attend.LEAVE_STARTTIME<=" + dateTimePicker2.Value.Date.Ticks + " and attend.LEAVE_ENDTIME>=" + dateTimePicker2.Value.Date.Ticks + ")) group by u.ku_id";
             IList qing_jia = baseService.ExecuteSQL(qj_sql);
             if (qing_jia != null && qing_jia.Count > 0)
             {
                 foreach (Object[] o in qing_jia)
                 {
                     List<object> dayNum = (List<object>)ht[Convert.ToInt64(o[0])];
-                    dayNum[5] = Convert.ToInt64(o[1])/864000000000;
+                    dayNum[5] = Convert.ToInt64(o[1]) / 864000000000;
                     ht[Convert.ToInt64(o[0])] = dayNum;
                 }
             }
-            listView1.Items.Clear();
-            initListView(listView1, ht);
+
+
+
+
+
+            dataGridView1.Rows.Clear();
+            initListView(dataGridView1, ht);
+        
         }
-        #endregion
 
 
         #region 页面切换
         private void all_static_pictureBox_Click(object sender, EventArgs e)
         {
+            this.all_static_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.综合统计;
+            this.att_static_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.考勤统计1_;
+            this.label9.Text = "综合统计";
             panel1.Visible = true;
             panel2.Visible = false;
         }
 
         private void att_static_pictureBox_Click(object sender, EventArgs e)
         {
+            this.all_static_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.综合统计_;
+            this.att_static_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.考勤统计1;
+            this.label9.Text = "考勤统计";
             panel1.Visible = false;
             panel2.Visible = true;
         }
         #endregion
 
-   
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.comboBox1.Cursor = Cursors.WaitCursor;
+            LoadData();
+            this.comboBox1.Cursor = Cursors.Hand;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            this.dateTimePicker1.Cursor = Cursors.WaitCursor;
+            LoadData();
+            this.dateTimePicker1.Cursor = Cursors.Hand;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            this.dateTimePicker2.Cursor = Cursors.WaitCursor;
+            LoadData();
+            this.dateTimePicker2.Cursor = Cursors.Hand;
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.button3.Cursor = Cursors.WaitCursor;
+            DoExport.DoTheExport(this.dataGridView1);
+            this.button3.Cursor = Cursors.Hand;
+        }
+
+
+
     }
 }

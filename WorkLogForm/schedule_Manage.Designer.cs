@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(schedule_Manage));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -295,12 +296,12 @@
             // close_pictureBox
             // 
             this.close_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.close_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.关闭渐变;
             this.close_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.close_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_pictureBox.Location = new System.Drawing.Point(982, 0);
+            this.close_pictureBox.Image = global::WorkLogForm.Properties.Resources.close;
+            this.close_pictureBox.Location = new System.Drawing.Point(977, 0);
             this.close_pictureBox.Name = "close_pictureBox";
-            this.close_pictureBox.Size = new System.Drawing.Size(25, 20);
+            this.close_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.close_pictureBox.TabIndex = 166;
             this.close_pictureBox.TabStop = false;
             this.close_pictureBox.Click += new System.EventHandler(this.close_pictureBox_Click);
@@ -310,12 +311,12 @@
             // min_pictureBox
             // 
             this.min_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.min_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.最小化渐变;
             this.min_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.min_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.min_pictureBox.Location = new System.Drawing.Point(957, 0);
+            this.min_pictureBox.Image = global::WorkLogForm.Properties.Resources.Min;
+            this.min_pictureBox.Location = new System.Drawing.Point(947, 0);
             this.min_pictureBox.Name = "min_pictureBox";
-            this.min_pictureBox.Size = new System.Drawing.Size(25, 20);
+            this.min_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.min_pictureBox.TabIndex = 165;
             this.min_pictureBox.TabStop = false;
             this.min_pictureBox.Click += new System.EventHandler(this.min_pictureBox_Click);
@@ -429,9 +430,10 @@
             // panel3_pictureBox
             // 
             this.panel3_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.panel3_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.员工日程;
+            this.panel3_pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3_pictureBox.BackgroundImage")));
             this.panel3_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3_pictureBox.Location = new System.Drawing.Point(227, 39);
+            this.panel3_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel3_pictureBox.Location = new System.Drawing.Point(227, 44);
             this.panel3_pictureBox.Name = "panel3_pictureBox";
             this.panel3_pictureBox.Size = new System.Drawing.Size(84, 33);
             this.panel3_pictureBox.TabIndex = 179;
@@ -441,9 +443,10 @@
             // panel2_pictureBox
             // 
             this.panel2_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.panel2_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.分享日程;
+            this.panel2_pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2_pictureBox.BackgroundImage")));
             this.panel2_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2_pictureBox.Location = new System.Drawing.Point(137, 39);
+            this.panel2_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2_pictureBox.Location = new System.Drawing.Point(137, 44);
             this.panel2_pictureBox.Name = "panel2_pictureBox";
             this.panel2_pictureBox.Size = new System.Drawing.Size(84, 33);
             this.panel2_pictureBox.TabIndex = 178;
@@ -453,9 +456,10 @@
             // panel1_pictureBox
             // 
             this.panel1_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.panel1_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.个人日程;
+            this.panel1_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.个人日程_;
             this.panel1_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1_pictureBox.Location = new System.Drawing.Point(47, 39);
+            this.panel1_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1_pictureBox.Location = new System.Drawing.Point(47, 44);
             this.panel1_pictureBox.Name = "panel1_pictureBox";
             this.panel1_pictureBox.Size = new System.Drawing.Size(84, 33);
             this.panel1_pictureBox.TabIndex = 177;
@@ -1104,7 +1108,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页2;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 702);
             this.Controls.Add(this.panel2);
@@ -1119,6 +1124,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "schedule_Manage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "日程管理";

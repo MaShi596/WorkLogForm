@@ -59,12 +59,12 @@ namespace WorkLogForm
         #region 最小化关闭按钮
         private void min_pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化_副本;
+            min_pictureBox.BackgroundImage =  WorkLogForm.Properties.Resources.Minenter;
         }
 
         private void min_pictureBox_MouseLeave_1(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化渐变;
+            min_pictureBox.BackgroundImage = null;
         }
        
        
@@ -78,12 +78,12 @@ namespace WorkLogForm
         }
         private void close_pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变_副本;
+            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Closeenter;
         }
 
         private void close_pictureBox_MouseLeave_1(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变;
+            close_pictureBox.BackgroundImage = null;//WorkLogForm.Properties.Resources.关闭渐变;
         }
 
        

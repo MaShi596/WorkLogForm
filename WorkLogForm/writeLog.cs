@@ -441,10 +441,6 @@ namespace WorkLogForm
         {
             this.panelofWriteComment.Visible = true;
 
-
-
-         
-
         }
 
         

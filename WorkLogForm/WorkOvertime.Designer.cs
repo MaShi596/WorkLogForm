@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkOvertime));
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -124,16 +125,15 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabControl1.Location = new System.Drawing.Point(49, 102);
+            this.tabControl1.Location = new System.Drawing.Point(12, 51);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(911, 561);
+            this.tabControl1.Size = new System.Drawing.Size(984, 559);
             this.tabControl1.TabIndex = 221;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -144,10 +144,10 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(903, 528);
+            this.tabPage1.Size = new System.Drawing.Size(976, 529);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "安排加班";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 3);
+            this.groupBox1.Location = new System.Drawing.Point(57, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(872, 121);
             this.groupBox1.TabIndex = 232;
@@ -314,7 +314,7 @@
             this.panel43.Controls.Add(this.listView1);
             this.panel43.Controls.Add(this.textBox5);
             this.panel43.Controls.Add(this.label7);
-            this.panel43.Location = new System.Drawing.Point(11, 154);
+            this.panel43.Location = new System.Drawing.Point(57, 154);
             this.panel43.Name = "panel43";
             this.panel43.Size = new System.Drawing.Size(872, 362);
             this.panel43.TabIndex = 231;
@@ -408,7 +408,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(31, 131);
+            this.label4.Location = new System.Drawing.Point(55, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 19);
             this.label4.TabIndex = 230;
@@ -420,10 +420,10 @@
             this.tabPage2.Controls.Add(this.listView2);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(903, 528);
+            this.tabPage2.Size = new System.Drawing.Size(976, 529);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "安排概览";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -439,7 +439,7 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Location = new System.Drawing.Point(14, 0);
+            this.groupBox2.Location = new System.Drawing.Point(48, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(873, 86);
             this.groupBox2.TabIndex = 233;
@@ -538,7 +538,7 @@
             this.listView2.Font = new System.Drawing.Font("宋体", 10F);
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(15, 107);
+            this.listView2.Location = new System.Drawing.Point(49, 107);
             this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Scrollable = false;
@@ -600,9 +600,9 @@
             this.tabPage4.Controls.Add(this.checkBox1);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.listView4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(903, 528);
+            this.tabPage4.Size = new System.Drawing.Size(976, 529);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "加班取消";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -610,7 +610,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 448);
+            this.checkBox1.Location = new System.Drawing.Point(51, 448);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(55, 21);
             this.checkBox1.TabIndex = 51;
@@ -620,7 +620,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(784, 448);
+            this.button4.Location = new System.Drawing.Point(820, 448);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 28);
             this.button4.TabIndex = 50;
@@ -643,7 +643,7 @@
             this.listView4.Font = new System.Drawing.Font("宋体", 10F);
             this.listView4.FullRowSelect = true;
             this.listView4.GridLines = true;
-            this.listView4.Location = new System.Drawing.Point(15, 24);
+            this.listView4.Location = new System.Drawing.Point(51, 24);
             this.listView4.MultiSelect = false;
             this.listView4.Name = "listView4";
             this.listView4.Scrollable = false;
@@ -711,16 +711,16 @@
             this.tabPage3.Controls.Add(this.dateTimePicker6);
             this.tabPage3.Controls.Add(this.listView3);
             this.tabPage3.Controls.Add(this.comboBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(903, 528);
+            this.tabPage3.Size = new System.Drawing.Size(976, 529);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "加班统计";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(379, 123);
+            this.button3.Location = new System.Drawing.Point(401, 123);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 27);
             this.button3.TabIndex = 6;
@@ -731,7 +731,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(579, 77);
+            this.label12.Location = new System.Drawing.Point(601, 77);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(92, 17);
             this.label12.TabIndex = 5;
@@ -740,7 +740,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(125, 128);
+            this.label11.Location = new System.Drawing.Point(147, 128);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 17);
             this.label11.TabIndex = 5;
@@ -749,7 +749,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(376, 74);
+            this.label5.Location = new System.Drawing.Point(398, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 17);
             this.label5.TabIndex = 5;
@@ -759,14 +759,14 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(418, 71);
+            this.comboBox3.Location = new System.Drawing.Point(440, 71);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(108, 25);
             this.comboBox3.TabIndex = 4;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(677, 74);
+            this.textBox4.Location = new System.Drawing.Point(699, 74);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(108, 23);
             this.textBox4.TabIndex = 3;
@@ -776,7 +776,7 @@
             this.dateTimePicker6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker6.CustomFormat = "yyyy年MM月";
             this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker6.Location = new System.Drawing.Point(195, 125);
+            this.dateTimePicker6.Location = new System.Drawing.Point(217, 125);
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.ShowUpDown = true;
             this.dateTimePicker6.Size = new System.Drawing.Size(121, 23);
@@ -788,7 +788,7 @@
             this.columnHeader8,
             this.columnHeader16,
             this.columnHeader14});
-            this.listView3.Location = new System.Drawing.Point(118, 166);
+            this.listView3.Location = new System.Drawing.Point(140, 166);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(667, 231);
             this.listView3.TabIndex = 1;
@@ -814,7 +814,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 68);
+            this.comboBox1.Location = new System.Drawing.Point(140, 68);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 25);
             this.comboBox1.TabIndex = 0;
@@ -823,12 +823,12 @@
             // close_pictureBox
             // 
             this.close_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.close_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.关闭渐变;
             this.close_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.close_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_pictureBox.Location = new System.Drawing.Point(980, 0);
+            this.close_pictureBox.Image = global::WorkLogForm.Properties.Resources.close;
+            this.close_pictureBox.Location = new System.Drawing.Point(976, 0);
             this.close_pictureBox.Name = "close_pictureBox";
-            this.close_pictureBox.Size = new System.Drawing.Size(28, 24);
+            this.close_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.close_pictureBox.TabIndex = 223;
             this.close_pictureBox.TabStop = false;
             this.close_pictureBox.Click += new System.EventHandler(this.close_pictureBox_Click);
@@ -838,12 +838,12 @@
             // min_pictureBox
             // 
             this.min_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.min_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.最小化渐变;
             this.min_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.min_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.min_pictureBox.Location = new System.Drawing.Point(952, 0);
+            this.min_pictureBox.Image = global::WorkLogForm.Properties.Resources.Min;
+            this.min_pictureBox.Location = new System.Drawing.Point(946, 0);
             this.min_pictureBox.Name = "min_pictureBox";
-            this.min_pictureBox.Size = new System.Drawing.Size(28, 24);
+            this.min_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.min_pictureBox.TabIndex = 222;
             this.min_pictureBox.TabStop = false;
             this.min_pictureBox.Click += new System.EventHandler(this.min_pictureBox_Click);
@@ -856,7 +856,7 @@
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label45.Location = new System.Drawing.Point(741, 48);
+            this.label45.Location = new System.Drawing.Point(803, 48);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(110, 24);
             this.label45.TabIndex = 224;
@@ -866,13 +866,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页2;
-            this.ClientSize = new System.Drawing.Size(1008, 702);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页3;
+            this.ClientSize = new System.Drawing.Size(1008, 600);
             this.Controls.Add(this.label45);
             this.Controls.Add(this.close_pictureBox);
             this.Controls.Add(this.min_pictureBox);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkOvertime";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "加班管理";

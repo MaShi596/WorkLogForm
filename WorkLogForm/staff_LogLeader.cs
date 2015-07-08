@@ -119,11 +119,11 @@ namespace WorkLogForm
         #region 最小化关闭按钮
         private void min_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化_副本;
+            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Minenter;
         }
         private void min_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化渐变;
+            min_pictureBox.BackgroundImage = null;//WorkLogForm.Properties.Resources.最小化渐变;
         }
         private void min_pictureBox_Click(object sender, EventArgs e)
         {
@@ -135,11 +135,11 @@ namespace WorkLogForm
         }
         private void close_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变_副本;
+            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Closeenter;
         }
         private void close_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变;
+            close_pictureBox.BackgroundImage = null;// WorkLogForm.Properties.Resources.关闭渐变;
         }
         #endregion
         
@@ -599,6 +599,10 @@ namespace WorkLogForm
             panel2.Visible = false;
             panel3.Visible = false;
             this.label14.Text = "个人日志";
+            this.panel1_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.个人日志_;
+            this.panel2_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.分享日志;
+            this.panel3_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.员工日志;
+
         }
 
         /// <summary>
@@ -612,6 +616,9 @@ namespace WorkLogForm
             panel2.Visible = false;
             panel3.Visible = true;
             this.label14.Text = "分享日志";
+            this.panel1_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.个人日志;
+            this.panel2_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.分享日志_;
+            this.panel3_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.员工日志;
         }
         /// <summary>
         /// 员工日志按钮
@@ -624,6 +631,9 @@ namespace WorkLogForm
             panel2.Visible = true;
             panel3.Visible = false;
             this.label14.Text = "员工日志";
+            this.panel1_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.个人日志;
+            this.panel2_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.分享日志;
+            this.panel3_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.员工日志_;
         }
 
         #endregion

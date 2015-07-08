@@ -23,7 +23,7 @@ namespace WorkLogForm.CommonClass
             this.frm1 = frm;
             //this.timer1 = timer;
             this.frm1.LocationChanged += new EventHandler(frm1_LocationChanged);
-            this.frm1.TopMost = true;
+            this.frm1.TopMost = false;
             this.timer1.Enabled = true;
             this.timer1.Interval = 100;
             this.timer1.Tick += new EventHandler(timer1_Tick);

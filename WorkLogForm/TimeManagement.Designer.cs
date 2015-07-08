@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeManagement));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.close_pictureBox = new System.Windows.Forms.PictureBox();
             this.min_pictureBox = new System.Windows.Forms.PictureBox();
@@ -260,12 +261,12 @@
             // close_pictureBox
             // 
             this.close_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.close_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.关闭渐变;
             this.close_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.close_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_pictureBox.Location = new System.Drawing.Point(983, 0);
+            this.close_pictureBox.Image = global::WorkLogForm.Properties.Resources.close;
+            this.close_pictureBox.Location = new System.Drawing.Point(977, 0);
             this.close_pictureBox.Name = "close_pictureBox";
-            this.close_pictureBox.Size = new System.Drawing.Size(25, 20);
+            this.close_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.close_pictureBox.TabIndex = 126;
             this.close_pictureBox.TabStop = false;
             this.close_pictureBox.Click += new System.EventHandler(this.close_pictureBox_Click);
@@ -275,12 +276,12 @@
             // min_pictureBox
             // 
             this.min_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.min_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.最小化渐变;
             this.min_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.min_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.min_pictureBox.Location = new System.Drawing.Point(958, 0);
+            this.min_pictureBox.Image = global::WorkLogForm.Properties.Resources.Min;
+            this.min_pictureBox.Location = new System.Drawing.Point(946, 0);
             this.min_pictureBox.Name = "min_pictureBox";
-            this.min_pictureBox.Size = new System.Drawing.Size(25, 20);
+            this.min_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.min_pictureBox.TabIndex = 125;
             this.min_pictureBox.TabStop = false;
             this.min_pictureBox.Click += new System.EventHandler(this.min_pictureBox_Click);
@@ -293,11 +294,11 @@
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(769, 37);
+            this.label45.Location = new System.Drawing.Point(814, 43);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(110, 31);
             this.label45.TabIndex = 157;
-            this.label45.Text = "时间管理";
+            this.label45.Text = "系统管理";
             // 
             // holiday_listView
             // 
@@ -522,7 +523,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.work_start_dateTimePicker);
             this.panel1.Controls.Add(this.work_name_comboBox);
             this.panel1.Controls.Add(this.label2);
@@ -790,11 +791,11 @@
             this.checkBox7.BackColor = System.Drawing.Color.Transparent;
             this.checkBox7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox7.ForeColor = System.Drawing.Color.Black;
-            this.checkBox7.Location = new System.Drawing.Point(191, 155);
+            this.checkBox7.Location = new System.Drawing.Point(259, 155);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(56, 24);
             this.checkBox7.TabIndex = 21;
-            this.checkBox7.Text = "周六";
+            this.checkBox7.Text = "周日";
             this.checkBox7.UseVisualStyleBackColor = false;
             // 
             // label5
@@ -815,16 +816,16 @@
             this.checkBox6.BackColor = System.Drawing.Color.Transparent;
             this.checkBox6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox6.ForeColor = System.Drawing.Color.Black;
-            this.checkBox6.Location = new System.Drawing.Point(259, 155);
+            this.checkBox6.Location = new System.Drawing.Point(187, 155);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(56, 24);
             this.checkBox6.TabIndex = 22;
-            this.checkBox6.Text = "周日";
+            this.checkBox6.Text = "周六";
             this.checkBox6.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.holiday_listView);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.label4);
@@ -844,7 +845,7 @@
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabControl1.Location = new System.Drawing.Point(-1, 76);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(992, 614);
@@ -875,7 +876,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
+            this.tabPage4.BackColor = System.Drawing.Color.White;
             this.tabPage4.Controls.Add(this.tabControl2);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
@@ -896,7 +897,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(187)))), ((int)(((byte)(211)))));
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabPage5.Controls.Add(this.comboBox3);
             this.tabPage5.Controls.Add(this.label16);
             this.tabPage5.Controls.Add(this.comboBox2);
@@ -1300,7 +1301,7 @@
             // 
             // tabPage7
             // 
-            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
+            this.tabPage7.BackColor = System.Drawing.Color.White;
             this.tabPage7.Controls.Add(this.button5);
             this.tabPage7.Controls.Add(this.panel4);
             this.tabPage7.Controls.Add(this.listView2);
@@ -1469,7 +1470,7 @@
             // 
             // tabPage8
             // 
-            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
+            this.tabPage8.BackColor = System.Drawing.Color.White;
             this.tabPage8.Controls.Add(this.groupBox3);
             this.tabPage8.Controls.Add(this.listView1);
             this.tabPage8.Controls.Add(this.groupBox1);
@@ -1826,7 +1827,7 @@
             // 
             // tabPage9
             // 
-            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
+            this.tabPage9.BackColor = System.Drawing.Color.White;
             this.tabPage9.Controls.Add(this.groupBox7);
             this.tabPage9.Controls.Add(this.groupBox6);
             this.tabPage9.Controls.Add(this.groupBox4);
@@ -2096,7 +2097,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
+            this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.panel3);
@@ -2262,8 +2263,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(221)))), ((int)(((byte)(208)))));
-            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页2;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 702);
             this.Controls.Add(this.label45);
@@ -2272,6 +2273,7 @@
             this.Controls.Add(this.min_pictureBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TimeManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "时间管理";

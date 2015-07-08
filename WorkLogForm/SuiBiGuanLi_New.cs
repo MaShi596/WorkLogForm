@@ -78,11 +78,11 @@ namespace WorkLogForm
         #region 最小化关闭按钮
         private void min_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化_副本;
+            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Minenter;
         }
         private void min_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            min_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.最小化渐变;
+            min_pictureBox.BackgroundImage = null;
         }
         private void min_pictureBox_Click(object sender, EventArgs e)
         {
@@ -94,11 +94,11 @@ namespace WorkLogForm
         }
         private void close_pictureBox_MouseEnter(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变_副本;
+            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.Closeenter;
         }
         private void close_pictureBox_MouseLeave(object sender, EventArgs e)
         {
-            close_pictureBox.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变;
+            close_pictureBox.BackgroundImage = null; //WorkLogForm.Properties.Resources.关闭渐变;
         }
         #endregion
         #region 窗体移动代码
@@ -129,6 +129,9 @@ namespace WorkLogForm
 
         private void MyOwnSuiBi_pictureBox_Click(object sender, EventArgs e)
         {
+            this.MyOwnSuiBi_pictureBox.BackgroundImage = Properties.Resources.我的随笔;
+            this.OtherSuiBi_pictureBox.BackgroundImage = Properties.Resources.随笔查询_;
+
             this.MyOwnSuiBi_panel.Visible = true;
             this.other_panel.Visible = false;
             this.label8.Text = "个人随笔";
@@ -136,6 +139,8 @@ namespace WorkLogForm
 
         private void OtherSuiBi_pictureBox_Click(object sender, EventArgs e)
         {
+            this.MyOwnSuiBi_pictureBox.BackgroundImage = Properties.Resources.我的随笔_;
+            this.OtherSuiBi_pictureBox.BackgroundImage = Properties.Resources.随笔查询;
             this.MyOwnSuiBi_panel.Visible = false;
             this.other_panel.Visible = true;
             this.label8.Text = "随笔查询";

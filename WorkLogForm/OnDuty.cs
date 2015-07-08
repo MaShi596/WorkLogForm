@@ -93,23 +93,23 @@ namespace WorkLogForm
         }
         private void pictureBox9_MouseMove(object sender, MouseEventArgs e)
         {
-            pictureBox9.BackgroundImage = WorkLogForm.Properties.Resources.最小化_副本;
+            pictureBox9.BackgroundImage = WorkLogForm.Properties.Resources.Minenter;
         }
 
         private void pictureBox9_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox9.BackgroundImage = WorkLogForm.Properties.Resources.最小化渐变;
+            pictureBox9.BackgroundImage = null;
         }
        
         
         private void pictureBox8_MouseMove(object sender, MouseEventArgs e)
         {
-            pictureBox8.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变_副本;
+            pictureBox8.BackgroundImage = WorkLogForm.Properties.Resources.Closeenter;
         }
 
         private void pictureBox8_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox8.BackgroundImage = WorkLogForm.Properties.Resources.关闭渐变;
+            pictureBox8.BackgroundImage = null ;
         }
         #endregion
 

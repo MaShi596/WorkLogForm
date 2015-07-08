@@ -66,12 +66,12 @@
             // close_pictureBox
             // 
             this.close_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.close_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.关闭渐变;
             this.close_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.close_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_pictureBox.Location = new System.Drawing.Point(966, 6);
+            this.close_pictureBox.Image = global::WorkLogForm.Properties.Resources.close;
+            this.close_pictureBox.Location = new System.Drawing.Point(961, 1);
             this.close_pictureBox.Name = "close_pictureBox";
-            this.close_pictureBox.Size = new System.Drawing.Size(25, 20);
+            this.close_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.close_pictureBox.TabIndex = 168;
             this.close_pictureBox.TabStop = false;
             this.close_pictureBox.Click += new System.EventHandler(this.close_pictureBox_Click);
@@ -81,12 +81,12 @@
             // min_pictureBox
             // 
             this.min_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.min_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.最小化渐变;
             this.min_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.min_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.min_pictureBox.Location = new System.Drawing.Point(941, 6);
+            this.min_pictureBox.Image = global::WorkLogForm.Properties.Resources.Min;
+            this.min_pictureBox.Location = new System.Drawing.Point(930, 1);
             this.min_pictureBox.Name = "min_pictureBox";
-            this.min_pictureBox.Size = new System.Drawing.Size(25, 20);
+            this.min_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.min_pictureBox.TabIndex = 167;
             this.min_pictureBox.TabStop = false;
             this.min_pictureBox.Click += new System.EventHandler(this.min_pictureBox_Click);
@@ -107,9 +107,11 @@
             // 
             // MyOwnSuiBi_pictureBox
             // 
+            this.MyOwnSuiBi_pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.MyOwnSuiBi_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.我的随笔;
+            this.MyOwnSuiBi_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MyOwnSuiBi_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MyOwnSuiBi_pictureBox.Image = global::WorkLogForm.Properties.Resources.我的随笔;
-            this.MyOwnSuiBi_pictureBox.Location = new System.Drawing.Point(50, 38);
+            this.MyOwnSuiBi_pictureBox.Location = new System.Drawing.Point(50, 41);
             this.MyOwnSuiBi_pictureBox.Name = "MyOwnSuiBi_pictureBox";
             this.MyOwnSuiBi_pictureBox.Size = new System.Drawing.Size(84, 33);
             this.MyOwnSuiBi_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,9 +121,11 @@
             // 
             // OtherSuiBi_pictureBox
             // 
+            this.OtherSuiBi_pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.OtherSuiBi_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.随笔查询_;
+            this.OtherSuiBi_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.OtherSuiBi_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OtherSuiBi_pictureBox.Image = global::WorkLogForm.Properties.Resources.随笔查询;
-            this.OtherSuiBi_pictureBox.Location = new System.Drawing.Point(162, 38);
+            this.OtherSuiBi_pictureBox.Location = new System.Drawing.Point(162, 41);
             this.OtherSuiBi_pictureBox.Name = "OtherSuiBi_pictureBox";
             this.OtherSuiBi_pictureBox.Size = new System.Drawing.Size(84, 33);
             this.OtherSuiBi_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -340,7 +344,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页2;
+            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(992, 681);
             this.Controls.Add(this.label8);

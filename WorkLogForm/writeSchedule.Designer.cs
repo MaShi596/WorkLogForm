@@ -337,6 +337,7 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(138, 21);
             this.dateTimePicker2.TabIndex = 178;
             this.dateTimePicker2.Value = new System.DateTime(2015, 2, 7, 0, 0, 0, 0);
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
@@ -506,6 +507,7 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(125, 21);
             this.dateTimePicker3.TabIndex = 185;
             this.dateTimePicker3.Value = new System.DateTime(2015, 2, 1, 17, 25, 21, 0);
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // label10
             // 
@@ -586,7 +588,6 @@
             this.Name = "writeSchedule";
             this.ShowInTaskbar = false;
             this.Text = "日程编写";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.writeSchedule_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.writeSchedule_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.writeSchedule_MouseMove);

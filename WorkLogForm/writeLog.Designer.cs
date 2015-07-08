@@ -77,7 +77,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
             this.panel1 = new System.Windows.Forms.Panel();
             this.RichengPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -87,6 +86,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
             ((System.ComponentModel.ISupportInitialize)(this.close_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.min_pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -385,24 +385,6 @@
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 79;
             // 
-            // htmlEditor1
-            // 
-            this.htmlEditor1.BackColor = System.Drawing.Color.Transparent;
-            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.htmlEditor1.BodyInnerHTML = null;
-            this.htmlEditor1.BodyInnerText = null;
-            this.htmlEditor1.EnterToBR = true;
-            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
-            this.htmlEditor1.Location = new System.Drawing.Point(10, 85);
-            this.htmlEditor1.Name = "htmlEditor1";
-            this.htmlEditor1.ShowStatusBar = false;
-            this.htmlEditor1.ShowToolBar = true;
-            this.htmlEditor1.ShowWb = true;
-            this.htmlEditor1.Size = new System.Drawing.Size(986, 580);
-            this.htmlEditor1.TabIndex = 170;
-            this.htmlEditor1.WebBrowserShortcutsEnabled = false;
-            this.htmlEditor1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.htmlEditor1_KeyDown);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -506,6 +488,24 @@
             this.label2.TabIndex = 177;
             this.label2.Text = "添加评论：";
             // 
+            // htmlEditor1
+            // 
+            this.htmlEditor1.BackColor = System.Drawing.Color.Transparent;
+            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.htmlEditor1.BodyInnerHTML = "你可以的";
+            this.htmlEditor1.BodyInnerText = "你可以的";
+            this.htmlEditor1.EnterToBR = true;
+            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
+            this.htmlEditor1.Location = new System.Drawing.Point(10, 85);
+            this.htmlEditor1.Name = "htmlEditor1";
+            this.htmlEditor1.ShowStatusBar = false;
+            this.htmlEditor1.ShowToolBar = true;
+            this.htmlEditor1.ShowWb = true;
+            this.htmlEditor1.Size = new System.Drawing.Size(986, 580);
+            this.htmlEditor1.TabIndex = 170;
+            this.htmlEditor1.WebBrowserShortcutsEnabled = false;
+            this.htmlEditor1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.htmlEditor1_KeyDown);
+            // 
             // writeLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -530,7 +530,6 @@
             this.Name = "writeLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "日志编写";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.writeLog_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.writeLog_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.writeLog_MouseMove);

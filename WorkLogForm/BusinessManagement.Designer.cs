@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusinessManagement));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listView9 = new System.Windows.Forms.ListView();
@@ -167,7 +168,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.button17);
@@ -460,14 +461,13 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabControl1.Location = new System.Drawing.Point(54, 101);
+            this.tabControl1.Location = new System.Drawing.Point(15, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(900, 577);
@@ -479,10 +479,10 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(892, 541);
+            this.tabPage1.Size = new System.Drawing.Size(892, 544);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "出差发起";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -495,9 +495,9 @@
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.listView5);
             this.tabPage4.Controls.Add(this.label17);
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(892, 541);
+            this.tabPage4.Size = new System.Drawing.Size(892, 544);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "部门审核";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -744,10 +744,10 @@
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.listView7);
             this.tabPage3.Controls.Add(this.label22);
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(892, 541);
+            this.tabPage3.Size = new System.Drawing.Size(892, 544);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "院领导审批";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -967,9 +967,9 @@
             this.tabPage5.Controls.Add(this.groupBox6);
             this.tabPage5.Controls.Add(this.listView10);
             this.tabPage5.Controls.Add(this.label29);
-            this.tabPage5.Location = new System.Drawing.Point(4, 32);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(892, 541);
+            this.tabPage5.Size = new System.Drawing.Size(892, 544);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "退回修改";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1185,10 +1185,10 @@
             this.tabPage2.Controls.Add(this.listView2);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(892, 541);
+            this.tabPage2.Size = new System.Drawing.Size(892, 544);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "出差情况查看";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1353,12 +1353,12 @@
             // close_pictureBox
             // 
             this.close_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.close_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.关闭渐变;
             this.close_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.close_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_pictureBox.Location = new System.Drawing.Point(981, 0);
+            this.close_pictureBox.Image = global::WorkLogForm.Properties.Resources.close;
+            this.close_pictureBox.Location = new System.Drawing.Point(899, 0);
             this.close_pictureBox.Name = "close_pictureBox";
-            this.close_pictureBox.Size = new System.Drawing.Size(28, 24);
+            this.close_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.close_pictureBox.TabIndex = 275;
             this.close_pictureBox.TabStop = false;
             this.close_pictureBox.Click += new System.EventHandler(this.close_pictureBox_Click);
@@ -1366,26 +1366,32 @@
             // min_pictureBox
             // 
             this.min_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.min_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.最小化渐变;
             this.min_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.min_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.min_pictureBox.Location = new System.Drawing.Point(953, 0);
+            this.min_pictureBox.Image = global::WorkLogForm.Properties.Resources.Min;
+            this.min_pictureBox.Location = new System.Drawing.Point(868, 0);
             this.min_pictureBox.Name = "min_pictureBox";
-            this.min_pictureBox.Size = new System.Drawing.Size(28, 24);
+            this.min_pictureBox.Size = new System.Drawing.Size(30, 33);
             this.min_pictureBox.TabIndex = 274;
             this.min_pictureBox.TabStop = false;
+            this.min_pictureBox.Click += new System.EventHandler(this.min_pictureBox_Click_1);
+            this.min_pictureBox.MouseLeave += new System.EventHandler(this.min_pictureBox_MouseLeave_1);
+            this.min_pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.min_pictureBox_MouseMove);
             // 
             // BusinessManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页2;
-            this.ClientSize = new System.Drawing.Size(1008, 702);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页3;
+            this.ClientSize = new System.Drawing.Size(930, 650);
             this.Controls.Add(this.close_pictureBox);
             this.Controls.Add(this.min_pictureBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BusinessManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出差管理";

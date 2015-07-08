@@ -40,12 +40,12 @@ namespace ChattingCtrl
                         t = "";
                     }
                 }
-                else if (t.Length == 2)
+                else if (t.Length == 2 && messagecount.ToString().Length!=2)
                 {
                     this.Width = 12;
                     this.Location = new Point(this.Location.X - 6, this.Location.Y);
                 }
-                else if (t.Length == 3)
+                else if (t.Length == 3&&messagecount.ToString().Length!=3)
                 {
                     this.Width = 18;
                     this.Location = new Point(this.Location.X - 12, this.Location.Y);

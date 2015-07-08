@@ -154,7 +154,9 @@
     <Compile Include="CommonClass\FromHide.cs" />
     <Compile Include="CommonClass\HtmlUtility.cs" />
     <Compile Include="CommonClass\OperateImage.cs" />
+    <Compile Include="CommonClass\ReadPictureFromStream.cs" />
     <Compile Include="DCIEngine.FrameWork.Snap\Hook.cs" />
+    <Compile Include="DoExport.cs" />
     <Compile Include="InstantMessenger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -507,6 +509,24 @@
     <None Include="Service References\WeatherService\WeatherWebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\个人日志_.png" />
+    <None Include="resources\个人日志.png" />
+    <None Include="resources\员工日志.png" />
+    <None Include="resources\员工日程_.png" />
+    <None Include="resources\员工日程.png" />
+    <None Include="resources\个人日程_.png" />
+    <None Include="resources\个人日程.png" />
+    <None Include="resources\分享日志_.png" />
+    <None Include="resources\分享日志.png" />
+    <None Include="resources\分享日程_.png" />
+    <None Include="resources\分享日程.png" />
+    <None Include="resources\员工日志_.png" />
+    <None Include="resources\综合统计_.png" />
+    <None Include="resources\考勤统计1_.png" />
+    <None Include="resources\我的随笔_.png" />
+    <None Include="resources\随笔查询_.png" />
+    <None Include="resources\考勤统计1.png" />
+    <None Include="resources\综合统计.png" />
     <None Include="resources\请假管理-请假申请_副本.png" />
     <None Include="resources\请假管理-请假审批 .png" />
     <None Include="resources\请假管理-请假查看.png" />
@@ -589,7 +609,6 @@
     <None Include="resources\263.png" />
     <None Include="resources\ShowRichengInWriteLog.png" />
     <None Include="resources\HideRichengInWriteLog.png" />
-    <Content Include="resources\个人考勤副本.png" />
     <None Include="resources\我的随笔.png" />
     <None Include="resources\随笔查询.png" />
     <None Include="resources\随笔1.png" />
@@ -611,16 +630,8 @@
     <None Include="Service References\WeatherService\WeatherWebService.disco" />
     <None Include="resources\日志管理系统首页3.png" />
     <None Include="resources\日志管理系统首页2.png" />
-    <None Include="resources\深蓝1.png" />
-    <None Include="resources\黄色.png" />
-    <None Include="resources\领导代签.png" />
-    <None Include="resources\查看考勤_副本.png" />
-    <None Include="resources\领导代签_副本.png" />
-    <None Include="resources\右翻页_副本.png" />
     <None Include="resources\左翻页_副本.png" />
     <None Include="resources\申请请假标题.png" />
-    <None Include="resources\透明登录22.png" />
-    <None Include="resources\查询.png" />
     <None Include="resources\领导代签标题.png" />
     <None Include="resources\查看考勤头部.png" />
     <None Include="resources\bg_left.jpg" />
@@ -630,11 +641,9 @@
     <None Include="resources\bg_dh2.png" />
     <None Include="resources\bg_left2.jpg" />
     <None Include="resources\bg_dh3.png" />
-    <None Include="resources\box.png" />
     <None Include="resources\查看考勤1.png" />
     <None Include="resources\统计考勤1.png" />
     <None Include="resources\查看考勤头部1.png" />
-    <None Include="resources\查看考勤表.png" />
     <None Include="resources\统计考勤.png" />
     <Content Include="image\1526203950-4.jpg" />
     <Content Include="image\16030Qb6-4.jpg" />
@@ -733,9 +742,6 @@
     <None Include="resources\闭合1.png" />
     <None Include="resources\闭合2.png" />
     <None Include="resources\展开11.png" />
-    <None Include="resources\查看考勤2.png" />
-    <None Include="resources\查看考勤.png" />
-    <None Include="resources\领导补签.png" />
     <None Include="resources\领导审批.png" />
     <None Include="resources\闭合.png" />
     <None Include="resources\展开1.png" />
@@ -746,22 +752,9 @@
     <None Include="resources\首页背景1.png" />
     <None Include="resources\29.ico" />
     <None Include="resources\活动安排.png" />
-    <None Include="resources\编写日志.png" />
-    <None Include="resources\编写日程.png" />
-    <None Include="resources\补签.png" />
-    <None Include="resources\补签1.png" />
-    <None Include="resources\请假管理1.png" />
     <None Include="resources\鼠标跟随尾光.swf" />
     <None Include="resources\白色.png" />
-    <None Include="resources\病1.png" />
-    <None Include="resources\婚201.png" />
-    <None Include="resources\深黄.png" />
-    <None Include="resources\桃红.png" />
-    <None Include="resources\深蓝.png" />
     <None Include="resources\左翻页.png" />
-    <None Include="resources\右翻页.png" />
-    <None Include="resources\透明登录 - 副本副本1.png" />
-    <None Include="resources\透明登录 - 副本副本.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxShockwaveFlashObjects">

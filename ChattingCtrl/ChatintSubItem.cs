@@ -52,7 +52,8 @@ namespace ChattingCtrl
                 if (value.Length < 21)
                 {
                     this.labelOfMessage.Text = value;
-                    this.labelOfMessage.Width = value.Length * 15;
+                    this.labelOfMessage.Width = value.Length * 16;
+                    this.labelOfMessage.Height = 18;
                     this.panelOfMessage.Height = 45;
                     this.labelOfMessage.Location = new Point(this.labelOfMessage.Location.X, this.labelOfMessage.Location.Y + 10);
                     this.panelOfMessage.Width = this.labelOfMessage.Width + 15;

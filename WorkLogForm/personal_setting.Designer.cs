@@ -75,24 +75,25 @@
             this.button1 = new System.Windows.Forms.Button();
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.close_pictureBox = new System.Windows.Forms.PictureBox();
-            this.backgroundWorkerOfLoadTheTree = new System.ComponentModel.BackgroundWorker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.close_pictureBox = new System.Windows.Forms.PictureBox();
+            this.backgroundWorkerOfLoadTheTree = new System.ComponentModel.BackgroundWorker();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_photo_cut)).BeginInit();
@@ -101,11 +102,11 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.close_pictureBox)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.close_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // comboItem12
@@ -258,6 +259,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.button6);
             this.tabPage4.Controls.Add(this.pb_photo_cut);
             this.tabPage4.Controls.Add(this.pb_photo_original);
@@ -274,7 +276,7 @@
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(190, 414);
+            this.button6.Location = new System.Drawing.Point(190, 420);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(143, 31);
             this.button6.TabIndex = 7;
@@ -286,7 +288,7 @@
             // 
             this.pb_photo_cut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb_photo_cut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_photo_cut.Location = new System.Drawing.Point(35, 321);
+            this.pb_photo_cut.Location = new System.Drawing.Point(35, 337);
             this.pb_photo_cut.Name = "pb_photo_cut";
             this.pb_photo_cut.Size = new System.Drawing.Size(115, 115);
             this.pb_photo_cut.TabIndex = 6;
@@ -317,7 +319,7 @@
             // btn_photo_done
             // 
             this.btn_photo_done.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_photo_done.Location = new System.Drawing.Point(190, 364);
+            this.btn_photo_done.Location = new System.Drawing.Point(190, 376);
             this.btn_photo_done.Name = "btn_photo_done";
             this.btn_photo_done.Size = new System.Drawing.Size(143, 33);
             this.btn_photo_done.TabIndex = 5;
@@ -328,7 +330,7 @@
             // btn_photo_make
             // 
             this.btn_photo_make.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_photo_make.Location = new System.Drawing.Point(190, 320);
+            this.btn_photo_make.Location = new System.Drawing.Point(190, 336);
             this.btn_photo_make.Name = "btn_photo_make";
             this.btn_photo_make.Size = new System.Drawing.Size(143, 33);
             this.btn_photo_make.TabIndex = 4;
@@ -410,173 +412,6 @@
             this.tabPage1.Text = "常规设置";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.button5.Location = new System.Drawing.Point(107, 171);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(166, 29);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "确定";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(107, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(166, 23);
-            this.textBox3.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(107, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(166, 23);
-            this.textBox2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(3, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "重复新密码：";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(30, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "新密码：";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(107, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(166, 23);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(17, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "原始密码：";
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.button4.Location = new System.Drawing.Point(182, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 30);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "取消自动登录";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.button2.Location = new System.Drawing.Point(21, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 30);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "设置自动登录";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // close_pictureBox
-            // 
-            this.close_pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.close_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.close;
-            this.close_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.close_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_pictureBox.Location = new System.Drawing.Point(372, -1);
-            this.close_pictureBox.Name = "close_pictureBox";
-            this.close_pictureBox.Size = new System.Drawing.Size(28, 23);
-            this.close_pictureBox.TabIndex = 169;
-            this.close_pictureBox.TabStop = false;
-            this.close_pictureBox.Click += new System.EventHandler(this.close_pictureBox_Click);
-            // 
-            // backgroundWorkerOfLoadTheTree
-            // 
-            this.backgroundWorkerOfLoadTheTree.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerOfLoadTheTree_DoWork);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(10, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(349, 65);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "自动登录设置";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Location = new System.Drawing.Point(10, 85);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(349, 217);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "密码修改";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Location = new System.Drawing.Point(10, 303);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(349, 71);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "开机启动";
-            // 
-            // button7
-            // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Location = new System.Drawing.Point(21, 24);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(134, 33);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "设置开机启动";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Location = new System.Drawing.Point(198, 24);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(126, 33);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "取消开机启动";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button9);
@@ -597,6 +432,182 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button8);
+            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Location = new System.Drawing.Point(10, 303);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(349, 71);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "开机启动";
+            // 
+            // button8
+            // 
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.Location = new System.Drawing.Point(198, 24);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(126, 33);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "取消开机启动";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Location = new System.Drawing.Point(21, 24);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(134, 33);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "设置开机启动";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Location = new System.Drawing.Point(10, 85);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(349, 217);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "密码修改";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(17, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "原始密码：";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(107, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(166, 23);
+            this.textBox1.TabIndex = 3;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.button5.Location = new System.Drawing.Point(107, 171);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(166, 29);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "确定";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(30, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "新密码：";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(107, 128);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(166, 23);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(3, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "重复新密码：";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(107, 86);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.Size = new System.Drawing.Size(166, 23);
+            this.textBox2.TabIndex = 6;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Location = new System.Drawing.Point(10, 16);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(349, 65);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "自动登录设置";
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.button2.Location = new System.Drawing.Point(21, 22);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 30);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "设置自动登录";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.button4.Location = new System.Drawing.Point(182, 22);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(161, 30);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "取消自动登录";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // close_pictureBox
+            // 
+            this.close_pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.close_pictureBox.BackgroundImage = global::WorkLogForm.Properties.Resources.close;
+            this.close_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.close_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close_pictureBox.Location = new System.Drawing.Point(372, -1);
+            this.close_pictureBox.Name = "close_pictureBox";
+            this.close_pictureBox.Size = new System.Drawing.Size(28, 23);
+            this.close_pictureBox.TabIndex = 169;
+            this.close_pictureBox.TabStop = false;
+            this.close_pictureBox.Click += new System.EventHandler(this.close_pictureBox_Click);
+            // 
+            // backgroundWorkerOfLoadTheTree
+            // 
+            this.backgroundWorkerOfLoadTheTree.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerOfLoadTheTree_DoWork);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(32, 309);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "注：转动滚轮调整选择区域大小";
+            // 
             // personal_setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -615,18 +626,19 @@
             this.Load += new System.EventHandler(this.personal_setting_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_photo_cut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_photo_original)).EndInit();
             this.pb_photo_original.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.close_pictureBox)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.close_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -698,5 +710,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label5;
     }
 }

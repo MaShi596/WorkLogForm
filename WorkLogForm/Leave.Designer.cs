@@ -606,7 +606,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label5);
@@ -781,7 +781,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.listView2);
@@ -1299,7 +1299,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.groupBox6);
             this.panel4.Controls.Add(this.groupBox5);
             this.panel4.Controls.Add(this.listView4);
@@ -1588,7 +1588,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::WorkLogForm.Properties.Resources.日志管理系统首页3;
             this.ClientSize = new System.Drawing.Size(1008, 702);
             this.Controls.Add(this.panel1);

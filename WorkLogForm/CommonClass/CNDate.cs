@@ -708,7 +708,7 @@ namespace WorkLogForm.CommonClass
                 char[] wd = u.WorkDay.ToCharArray();
                 for(int i=0;i<wd.Length;i++)
                 {
-                    if(wd[i].Equals((char)UsuallyDay.workDayEnum.Holiday))
+                    if(wd[i].Equals((char)UsuallyDay.workDayEnum.WorkDay))
                     {
                         workDays.Add(i);
                     }
@@ -721,33 +721,48 @@ namespace WorkLogForm.CommonClass
                 DateTime date = new DateTime(ticks);
                 if (holidayList.Contains(ticks))
                 {
-                    ticks += new DateTime(1, 1, 2).Date.Ticks;
+                    ticks = new DateTime(ticks).AddDays(1).Date.Ticks;
                     continue;
                 }
                 if (workDayList.Contains(ticks))
                 {
                     dateList.Add(ticks);
-                    ticks += new DateTime(1, 1, 2).Date.Ticks;
+                    ticks = new DateTime(ticks).AddDays(1).Date.Ticks;
                     continue;
                 }
-                foreach (int dayOfWeek in workDays)
+
+
+                if (IsInWorkDay(date, workDays))
                 {
-                    if (dayOfWeek + 1 == (int)date.DayOfWeek)
-                    {
-                        ticks += new DateTime(1, 1, 2).Date.Ticks;
-                        continue;
-                    }
-                    if (dayOfWeek == 6 && (int)date.DayOfWeek == 0)
-                    {
-                        ticks += new DateTime(1, 1, 2).Date.Ticks;
-                        continue;
-                    }
+                    dateList.Add(ticks);
+                
                 }
-                dateList.Add(ticks);
-                ticks += new DateTime(1, 1, 2).Date.Ticks;
+                //foreach (int dayOfWeek in workDays)
+                //{
+                //    if ((dayOfWeek + 1 == (int)date.DayOfWeek)||(dayOfWeek == 6 && (int)date.DayOfWeek == 0)) //一个星期中的第几天
+                //    {
+                //        ticks = new DateTime(ticks).AddDays(1).Date.Ticks;
+                //        break;
+                //        continue;
+                //    }
+                //}
+               
+                ticks = new DateTime(ticks).AddDays(1).Date.Ticks;
                
             }
             return dateList;
+        }
+
+      static  bool IsInWorkDay(DateTime date, IList workDays)
+        {
+            foreach (int dayOfWeek in workDays)
+            {
+                if ((dayOfWeek + 1 == (int)date.DayOfWeek) || (dayOfWeek == 6 && (int)date.DayOfWeek == 0)) //一个星期中的第几天
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

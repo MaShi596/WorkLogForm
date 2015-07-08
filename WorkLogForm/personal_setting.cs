@@ -91,6 +91,9 @@ namespace WorkLogForm
             this.UpdateStyles();
             newCutRect = new Rectangle(86, 70, 114, 114);
             oldCutRect = newCutRect;
+            pb_photo_original.Refresh();
+
+
             if (this.formLocation != null)
             {
                 this.Location = formLocation;
@@ -262,13 +265,14 @@ namespace WorkLogForm
             MessageBox.Show("保存成功！");
         }
 
-
+        #region 窗体关闭按钮
         private void close_pictureBox_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
 
-
+        #region 日志偏好保存按钮
         /// <summary>
         /// 日程偏好保存按钮
         /// </summary>
@@ -318,7 +322,7 @@ namespace WorkLogForm
             baseService.SaveOrUpdateEntity(ri_cheng_hobby);
             MessageBox.Show("保存成功！");
         }
-
+        #endregion
 
         #region 取消自动登录
         private void button2_Click(object sender, EventArgs e)
@@ -425,7 +429,10 @@ namespace WorkLogForm
         {
             if (this.tabControl1.SelectedIndex == 0)
             {
-              
+                var t = newCutRect.Size;
+                oldCutRect.Width = newCutRect.Width;
+                oldCutRect.Height = newCutRect.Height;
+                pb_photo_original.Refresh();
             }
             if (this.tabControl1.SelectedIndex == 1 )//|| this.tabControl1.SelectedIndex == 2)
             {
@@ -449,9 +456,9 @@ namespace WorkLogForm
             OpenFileDialog opdialog = new OpenFileDialog();
             opdialog.InitialDirectory = @"C:\";
             opdialog.FilterIndex = 1;
-            opdialog.Filter = "Image   Files(*.PNG)|*.PNG";
+            opdialog.Filter = "Image   Files(*.PNG;*.jpeg;*.jpg)|*.PNG;*.jpeg;*.jpg;";
             if (opdialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                this.pb_photo_original.Image = Image.FromFile(opdialog.FileName);
+                this.pb_photo_original.Image = ReadPictureFromStream.GetFile(opdialog.FileName); //Image.FromFile(opdialog.FileName);
         }
 
 
@@ -476,6 +483,9 @@ namespace WorkLogForm
                 Bitmap zoomBitmap = new Bitmap(bitmap, newCutRect.Size);
 
                 string tmpname = CommonStaticParameter.ICONS + @"\tmp" + DateTime.Now.Ticks.ToString() + ".png";
+                
+
+
                 CommonClass.OperateImage.CutForSquare(zoomBitmap, tmpname, 114, 100);
 
 
@@ -492,6 +502,9 @@ namespace WorkLogForm
             this.btn_photo_done.Cursor = Cursors.Hand;
         }
 
+
+
+        #region 
         private Bitmap ToRoundPic(string addd)
         {
             //保存图象   
@@ -515,12 +528,12 @@ namespace WorkLogForm
             g.Dispose();
 
            
-
+            
             return ybitmap;
         }
+        #endregion
 
-       
-
+        #region 保存上传头像
         private void SaveAndUploadHeadPic()
         {
             if (this.pb_photo_cut.BackgroundImage != null)
@@ -532,17 +545,14 @@ namespace WorkLogForm
                 if (!Directory.Exists(CommonStaticParameter.ICONS))
                     Directory.CreateDirectory(CommonStaticParameter.ICONS);
 
-                //删除原来的临时文件
-                string[] files = Directory.GetFiles(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"icons", this.user.Id.ToString() + "__" + "*.png", System.IO.SearchOption.AllDirectories);
-                if (files.Length > 0)
+                if (File.Exists(addressonlyid))
                 {
-                    for (int i = 0; i < files.Length; i++)
-                    {
-                        FileInfo oldfi = new FileInfo(files[i]);
-                        oldfi.Delete();
-                    }
+                    FileInfo oldfi = new FileInfo(addressonlyid);
+                    oldfi.Delete();
                 }
-                savpic.Save(address); //保存临时文件
+
+                savpic.Save(addressonlyid); //保存临时文件
+
                 //ToRoundPic(address).Save(address);
                 if (fileop == null)
                 {
@@ -559,8 +569,8 @@ namespace WorkLogForm
                     {
                         fileop.DeleteFileName(this.user.Id.ToString() + ".png", "Iconpics");
                     }
-                    fileop.Upload(address, "Iconpics");
-                    fileop.Rename(address, this.user.Id.ToString() + ".png", "Iconpics");
+                    fileop.Upload(addressonlyid, "Iconpics");
+                    fileop.Rename(addressonlyid, this.user.Id.ToString() + ".png", "Iconpics");
                     themain.RefreshHeaderPic();
                     MessageBox.Show("上传成功！");
                 }
@@ -572,6 +582,8 @@ namespace WorkLogForm
             
             }
         }
+        #endregion
+
 
 
         private void panel_shade_MouseDown(object sender, MouseEventArgs e)
@@ -595,10 +607,10 @@ namespace WorkLogForm
                     newCutRect.X = 0;
                 if (newCutRect.Location.Y < 0)
                     newCutRect.Y = 0;
-                if (newCutRect.Location.X + 114 > 300)
-                    newCutRect.X = 300 - 114;
-                if (newCutRect.Location.Y + 114 > 300)
-                    newCutRect.Y = 300 - 114;
+                if (newCutRect.Location.X + newCutRect.Width > 300)
+                    newCutRect.X = 300 - newCutRect.Width;
+                if (newCutRect.Location.Y + newCutRect.Height > 300)
+                    newCutRect.Y = 300 - newCutRect.Height;
 
                 this.panel_shade.Invalidate(oldCutRect, false);
                 this.panel_shade.Invalidate(newCutRect, false);

@@ -33,8 +33,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.user_label = new System.Windows.Forms.Label();
             this.min_pictureBox = new System.Windows.Forms.PictureBox();
             this.close_pictureBox = new System.Windows.Forms.PictureBox();
@@ -107,6 +105,9 @@
             this.meaaageCountLabelCHuChai = new ChattingCtrl.MessageCountLabel();
             this.meaaageCountLabelOfZhiBan = new ChattingCtrl.MessageCountLabel();
             this.meaaageCountLabelOFQingJia = new ChattingCtrl.MessageCountLabel();
+            this.messageCountLabelOfSuiBi = new ChattingCtrl.MessageCountLabel();
+            this.backgroundWorkerrefreshSuibiCount = new System.ComponentModel.BackgroundWorker();
+            this.timerOfSuiBiCount = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.min_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_pictureBox)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -141,14 +142,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxofHeadIcon)).BeginInit();
             this.panelOfRiZhi.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 50;
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 50;
             // 
             // user_label
             // 
@@ -926,13 +919,36 @@
             this.meaaageCountLabelOFQingJia.Size = new System.Drawing.Size(6, 8);
             this.meaaageCountLabelOFQingJia.TabIndex = 37;
             // 
+            // messageCountLabelOfSuiBi
+            // 
+            this.messageCountLabelOfSuiBi.BackColor = System.Drawing.Color.Transparent;
+            this.messageCountLabelOfSuiBi.ForeColor = System.Drawing.Color.Red;
+            this.messageCountLabelOfSuiBi.Location = new System.Drawing.Point(272, 92);
+            this.messageCountLabelOfSuiBi.Margin = new System.Windows.Forms.Padding(0);
+            this.messageCountLabelOfSuiBi.MessageCount = 0;
+            this.messageCountLabelOfSuiBi.Name = "messageCountLabelOfSuiBi";
+            this.messageCountLabelOfSuiBi.Size = new System.Drawing.Size(6, 8);
+            this.messageCountLabelOfSuiBi.TabIndex = 45;
+            // 
+            // backgroundWorkerrefreshSuibiCount
+            // 
+            this.backgroundWorkerrefreshSuibiCount.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerrefreshSuibiCount_DoWork);
+            this.backgroundWorkerrefreshSuibiCount.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerrefreshSuibiCount_RunWorkerCompleted);
+            // 
+            // timerOfSuiBiCount
+            // 
+            this.timerOfSuiBiCount.Enabled = true;
+            this.timerOfSuiBiCount.Interval = 10000;
+            this.timerOfSuiBiCount.Tick += new System.EventHandler(this.timerOfSuiBiCount_Tick);
+            // 
             // main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(356, 611);
+            this.Controls.Add(this.messageCountLabelOfSuiBi);
             this.Controls.Add(this.paneOfRiCheng);
             this.Controls.Add(this.panelOfSuibi);
             this.Controls.Add(this.panelofMessage);
@@ -1027,8 +1043,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label user_label;
         private System.Windows.Forms.PictureBox min_pictureBox;
         private System.Windows.Forms.PictureBox close_pictureBox;
@@ -1101,6 +1115,9 @@
         private System.ComponentModel.BackgroundWorker backgroundWorkerofOtherWork;
         private System.Windows.Forms.Timer TimerOfShowWindow;
         private System.ComponentModel.BackgroundWorker backgroundWorkerOfDownPicture;
+        private ChattingCtrl.MessageCountLabel messageCountLabelOfSuiBi;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerrefreshSuibiCount;
+        private System.Windows.Forms.Timer timerOfSuiBiCount;
         //private System.Windows.Forms.Label LabelofChatttingCount;
 
        
