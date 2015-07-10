@@ -2,9 +2,9 @@
 <URLAddres URL="ftp://202.113.127.142/WorkLog/"/>
 //升级文件所在服务器端的网址
 <UpdateInfo>
-<UpdateTime Date="2015-05-07"/>
+<UpdateTime Date="2015-04-09"/>
 //升级文件的更新日期
-<Version Num="V2.5"/>
+<Version Num="V1.9"/>
 //升级文件的版本号
 </UpdateInfo>
 <UpdateFileList>
@@ -17,13 +17,7 @@
 
 <UpdateFile FileName="/Readme.txt" DestPath="\"/>
 
-<UpdateFile FileName="/ChattingCtrl.dll" DestPath="\"/>
 
-<UpdateFile FileName="/SkinForm.dll" DestPath="\"/>
-
-<UpdateFile FileName="/ClassLibrary.dll" DestPath="\"/>
-
-<UpdateFile FileName="/SideBar.dll" DestPath="\"/>
 
 
 </UpdateFileList>
