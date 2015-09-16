@@ -108,7 +108,7 @@ namespace WorkLogForm.Service
         /// <param name="entity"></param>
         public void SaveOrUpdateEntity(BaseEntity entity)
         {
-            ISessionFactory factory;
+            ISessionFactory factory = null;
             ISession session=null;
             ITransaction transaction =null;
             // Tell NHibernate that this object should be updated
@@ -134,7 +134,11 @@ namespace WorkLogForm.Service
             {
                 if (session != null && session.IsOpen)
                 {
+                    factory.Close();
+                    session.Clear();
                     session.Close();
+                    factory.Dispose();
+                    session.Dispose();
                 }
             }
         }
@@ -263,10 +267,12 @@ namespace WorkLogForm.Service
         
         public IList loadEntityList(string sql)
         {
+            ISession session = null;
+            ISessionFactory factory = null;
             try
             {
-                ISessionFactory factory = Connection.Connection.getConfiguration().BuildSessionFactory();
-                ISession session = factory.OpenSession();
+                factory = Connection.Connection.getConfiguration().BuildSessionFactory();
+                session = factory.OpenSession();
                 ITransaction trans = session.BeginTransaction();
                 IQuery query = session.CreateQuery(sql);
                 IList result = query != null ? query.List() : null;
@@ -276,7 +282,19 @@ namespace WorkLogForm.Service
             catch (Exception e)
             {
                 throw e;
-                return null;
+                //return null;
+            }
+            finally
+            {
+                if (session != null && session.IsOpen)
+                {
+                    session.Clear();
+                    session.Close();
+                    factory.Close();
+                    factory.Dispose();
+                    session.Dispose();
+                    
+                }
             }
         }
 
@@ -306,9 +324,10 @@ namespace WorkLogForm.Service
                     result.Add(values);
                 }
             }
-            catch
+            catch (Exception e)
             {
-                return null;
+                throw e;
+                
             }
             finally
             {

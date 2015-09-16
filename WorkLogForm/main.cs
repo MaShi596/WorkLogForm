@@ -310,7 +310,9 @@ namespace WorkLogForm
                     this.userlistUser.Add(u);
                 }
             }
-        
+
+            depts.Clear();
+            userlistusers.Clear();
         }
 
         private void backgroundWorkerLoad_UserList(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
@@ -1066,6 +1068,10 @@ namespace WorkLogForm
                     this.rc_flowLayoutPanel.BackgroundImage = null; 
                 }
                 panelOfSuibi.Visible = rcVisible;
+
+                staffScheduleList.Clear();
+
+
             }
         }
         /// <summary>
@@ -1165,6 +1171,8 @@ namespace WorkLogForm
                 this.rz_flowLayoutPanel.BackgroundImage = WorkLogForm.Properties.Resources.NoCntentBg;
             
             }
+
+            staffLogList.Clear();
 
             //}
         }
@@ -1293,6 +1301,8 @@ namespace WorkLogForm
                     suibi.Parent = Show_SuiBi_flowPanel;
                 }
             }
+
+            SuiBiList.Clear();
 
         }
 
@@ -1504,7 +1514,7 @@ namespace WorkLogForm
 
             LoaduserAndDeptInUserlist();
 
-
+            userList.Clear();
         }
         private void backgroundWorkerOfDownPicture_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
@@ -1588,6 +1598,8 @@ namespace WorkLogForm
                     }
                 }
             }
+            userList.Clear();
+            GC.Collect();
         }
 
 
@@ -2134,9 +2146,13 @@ namespace WorkLogForm
                 OnChangeEventHandler onChange = new OnChangeEventHandler(ri_cheng_onChange);
                 BaseService.autoUpdateForm(onChange, "select ID from [dbo].LOG_T_STAFFSCHEDULE where WkTUserId=" + user.Id + " and STATE=" + (int)IEntity.stateEnum.Normal + " and IfRemind=" + (int)StaffSchedule.IfRemindEnum.Renmind + " and ScheduleTime>=" + thisDay + " and ShceduleTime<" + nextDay);
             }
-            catch 
-            { 
-            
+            catch
+            {
+
+            }
+            finally
+            {
+                GC.Collect();
             }
         }
         private void ri_cheng_onChange(object sender, SqlNotificationEventArgs e)
@@ -2153,7 +2169,13 @@ namespace WorkLogForm
             }
             catch
             {
- 
+
+
+            }
+            finally
+            {
+                GC.Collect();
+            
             
             }
         }
@@ -2194,7 +2216,11 @@ namespace WorkLogForm
                     }
                 }
             }
+
+            GC.Collect();
         }
+
+
         #endregion
 
         #region 提醒写日志
@@ -2301,6 +2327,8 @@ namespace WorkLogForm
 
                 SetMessageCount(this.messageCountLabelOfCommentLog, lists3.Length);
 
+
+
             }
             catch
             {
@@ -2309,6 +2337,13 @@ namespace WorkLogForm
                 this.Close();
 
             }
+            finally
+            {
+                GC.Collect();
+            
+            
+            }
+
         }
         private void LoadUnReadMessage()
         {
@@ -2419,6 +2454,8 @@ namespace WorkLogForm
 
                 #endregion
             }
+
+            GC.Collect();
         }
         private bool IsInChatUserlist(long id)
         {
@@ -2537,7 +2574,8 @@ namespace WorkLogForm
             catch { }
             SetthechatingUserIsTwinkle();
             #endregion
-        
+
+            GC.Collect();
         }
 
         private void SetthechatingUserIsTwinkle()
@@ -2802,13 +2840,15 @@ namespace WorkLogForm
         private void timerOfSuiBiCount_Tick(object sender, EventArgs e)
         {
             string theMaxSuibiId = IniReadAndWrite.IniReadValue("SuiBiCount", "TheMaxSuiBiID");
-            string sql = "select u from SuiBi u where u.State = " + (int)IEntity.stateEnum.Normal + " and u.Id > " + theMaxSuibiId;// TheMaxSuiBiID.ToString();
-            IList i = baseService.loadEntityList(sql);
+            //string sql = "select u from SuiBi u where u.State = " + (int)IEntity.stateEnum.Normal + " and u.Id > " + theMaxSuibiId;// TheMaxSuiBiID.ToString();
+            string sql = "select SuiBi.Id from SuiBi where SuiBi.STATE = " + (int)IEntity.stateEnum.Normal + " and SuiBi.Id >   " + theMaxSuibiId;
+            
+            IList i = baseService.ExecuteSQL(sql);
 
             if (i != null && i.Count > 0)
             {
-                SuiBi s = (SuiBi)i[i.Count - 1];
-                TheMaxSuiBiID = int.Parse(s.Id.ToString());
+                object[] s = i[i.Count - 1] as object[]; 
+                TheMaxSuiBiID = int.Parse(s[0].ToString());
                 theSuiBiCount = i.Count;
             }
             else
@@ -2819,8 +2859,18 @@ namespace WorkLogForm
 
             //更新显示数目
             this.messageCountLabelOfSuiBi.MessageCount = theSuiBiCount;
+
+
+            
+            
+            i.Clear();
+
+
+
             //backgroundWorkerrefreshSuibiCount.
             //this.backgroundWorkerrefreshSuibiCount.RunWorkerAsync();
+
+            GC.Collect();
         }
 
     }

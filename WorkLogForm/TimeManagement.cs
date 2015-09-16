@@ -64,7 +64,7 @@ namespace WorkLogForm
             #region 部门管理页加载
 
             //查询出副院长的姓名添加到列表中
-            string sql = "select u from WkTUser u right join u.UserRole role where role.KrDESC='工作小秘书角色' and role.KrOrder <> 3";
+            string sql = "select u from WkTUser u left join u.UserRole role where role.KrDESC='工作小秘书角色' and role.KrOrder <> 3";
             IList Namelist = baseService.loadEntityList(sql);
             
             if(Namelist != null && Namelist.Count > 0)
