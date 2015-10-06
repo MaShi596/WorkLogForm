@@ -19,6 +19,8 @@ using System.Net;
 using CommonClass;
 using System.IO;
 using ChattingCtrl;
+using Win7FTP.Library;
+using Win7FTP;
 
 namespace WorkLogForm
 {
@@ -26,7 +28,7 @@ namespace WorkLogForm
 
     public partial class main : SkinMain
     {
-
+        private frmMain Main;
 
         #region
         /// <summary>
@@ -291,7 +293,7 @@ namespace WorkLogForm
         {
 
             this.userlistDept.Clear();
-            this.userlistUser.Clear();
+            
             string sql = "select u from WkTDept u";
             IList depts = baseService.loadEntityList(sql);
             if (depts != null && depts.Count > 0)
@@ -301,8 +303,10 @@ namespace WorkLogForm
                     this.userlistDept.Add(d);
                 }
             }
+            
             string sql1 = "select u from WkTUser u ";
             IList userlistusers = baseService.loadEntityList(sql1);
+            this.userlistUser.Clear();
             if (userlistusers != null && userlistusers.Count > 0)
             {
                 foreach (WkTUser u in userlistusers)
@@ -712,6 +716,19 @@ namespace WorkLogForm
         {
             setting_pictureBox.BackgroundImage = null;
         }
+
+
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = WorkLogForm.Properties.Resources.Minenter;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = null;
+        }
+
         #endregion
 
         #region 系统设置效果
@@ -2872,6 +2889,33 @@ namespace WorkLogForm
 
             GC.Collect();
         }
+        #region
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //Set FTP
+                FTPclient objFtp = new FTPclient("115.24.161.163", "root", "iti@240$");
+                objFtp.CurrentDirectory = "/";
+                Main = new frmMain();
+
+                //Set FTP Client in MAIN form
+                Main.SetFtpClient(objFtp);
+
+                //Show MAIN form and HIDE this one
+                Main.Show();
+                //this.Hide();
+            }
+            catch (Exception ex)
+            {
+                //Display Error
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+        #endregion
 
     }
 }

@@ -108,6 +108,7 @@
             this.messageCountLabelOfSuiBi = new ChattingCtrl.MessageCountLabel();
             this.backgroundWorkerrefreshSuibiCount = new System.ComponentModel.BackgroundWorker();
             this.timerOfSuiBiCount = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.min_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_pictureBox)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -141,6 +142,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxofHeadIcon)).BeginInit();
             this.panelOfRiZhi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // user_label
@@ -201,20 +203,20 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(99, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 48);
             this.contextMenuStrip1.Text = "菜单";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.toolStripMenuItem1.Text = "退出";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(98, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 22);
             this.toolStripMenuItem2.Text = "还原";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -354,7 +356,7 @@
             this.sjgl_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.sjgl_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sjgl_pictureBox.Image = global::WorkLogForm.Properties.Resources.系统设置;
-            this.sjgl_pictureBox.Location = new System.Drawing.Point(235, -1);
+            this.sjgl_pictureBox.Location = new System.Drawing.Point(203, -1);
             this.sjgl_pictureBox.Name = "sjgl_pictureBox";
             this.sjgl_pictureBox.Size = new System.Drawing.Size(31, 30);
             this.sjgl_pictureBox.TabIndex = 11;
@@ -941,6 +943,21 @@
             this.timerOfSuiBiCount.Interval = 10000;
             this.timerOfSuiBiCount.Tick += new System.EventHandler(this.timerOfSuiBiCount_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::WorkLogForm.Properties.Resources.ftpbutto;
+            this.pictureBox1.Location = new System.Drawing.Point(235, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -948,6 +965,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(356, 611);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.messageCountLabelOfSuiBi);
             this.Controls.Add(this.paneOfRiCheng);
             this.Controls.Add(this.panelOfSuibi);
@@ -1036,6 +1054,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxofHeadIcon)).EndInit();
             this.panelOfRiZhi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1118,6 +1137,7 @@
         private ChattingCtrl.MessageCountLabel messageCountLabelOfSuiBi;
         private System.ComponentModel.BackgroundWorker backgroundWorkerrefreshSuibiCount;
         private System.Windows.Forms.Timer timerOfSuiBiCount;
+        private System.Windows.Forms.PictureBox pictureBox1;
         //private System.Windows.Forms.Label LabelofChatttingCount;
 
        

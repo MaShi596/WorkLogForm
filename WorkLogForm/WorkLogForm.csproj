@@ -509,6 +509,7 @@
     <None Include="Service References\WeatherService\WeatherWebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\ftpbutto.png" />
     <None Include="resources\个人日志_.png" />
     <None Include="resources\个人日志.png" />
     <None Include="resources\员工日志.png" />
@@ -795,6 +796,10 @@
     <ProjectReference Include="..\SkinForm\SkinForm.csproj">
       <Project>{7f988dda-955f-42f2-82eb-d6058fb7ff75}</Project>
       <Name>SkinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Win7FTP\Win7FTP\Win7FTP.csproj">
+      <Project>{6c7d8e5b-9e30-44d0-ad4f-06c74d6454c8}</Project>
+      <Name>Win7FTP</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinHtmlEditor\WinHtmlEditor.csproj">
       <Project>{1d1ef0a4-1d49-4d42-9295-e3b28359389a}</Project>
