@@ -1,0 +1,16 @@
+F:\worlogform\Win7FTP\Win7FTP\bin\Debug\Win7FTP.exe.config
+F:\worlogform\Win7FTP\Win7FTP\bin\Debug\Win7FTP.exe
+F:\worlogform\Win7FTP\Win7FTP\bin\Debug\Win7FTP.pdb
+F:\worlogform\Win7FTP\Win7FTP\bin\Debug\Microsoft.WindowsAPICodePack.xml
+F:\worlogform\Win7FTP\Win7FTP\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.csprojResolveAssemblyReference.cache
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.frmDownload.resources
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.frmLogin.resources
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.frmMain.resources
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.frmNewFolder.resources
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.frmRename.resources
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.frmUpload.resources
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.Properties.Resources.resources
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.csproj.GenerateResource.Cache
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.exe
+F:\worlogform\Win7FTP\Win7FTP\obj\Debug\Win7FTP.pdb
