@@ -20,6 +20,7 @@ namespace KjqbService
         KjqbService.DB.BusinessOperate bop = new BusinessOperate();
         KjqbService.DB.LeaveOperate leop = new LeaveOperate();
         KjqbService.DB.ChatOperate chatop = new ChatOperate();
+        ThunderApi thunderapi = new ThunderApi();
 
         #region 分享日志推送
         public bool SaveInLogListInService(LogInService log)
@@ -496,6 +497,12 @@ namespace KjqbService
 
         #endregion
 
-
+       #region 迅雷离线
+       public bool OpenThunder(string thunderurl)
+       {
+           thunderapi.openThunder(thunderurl);
+           return false;
+       }
+       #endregion
     }
 }

@@ -14,10 +14,10 @@ namespace KjqbService.DB
     
     public partial class ScheduleMessage
     {
-        public int Id { get; set; }
-        public Nullable<long> ScheduleID { get; set; }
+        public long Id { get; set; }
         public Nullable<long> UserID { get; set; }
         public Nullable<long> ShareUserID { get; set; }
+        public Nullable<long> ScheduleID { get; set; }
         public Nullable<int> State { get; set; }
         public Nullable<decimal> TimeStamp { get; set; }
         public Nullable<int> IsRead { get; set; }

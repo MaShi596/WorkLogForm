@@ -4,24 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="KjqbServiceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="KjqbServiceModelStoreContainer">
-          <EntitySet Name="BusinessMessage" EntityType="KjqbServiceModel.Store.BusinessMessage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ChatMessage" EntityType="KjqbServiceModel.Store.ChatMessage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CommentMessage" EntityType="KjqbServiceModel.Store.CommentMessage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LeaveMessage" EntityType="KjqbServiceModel.Store.LeaveMessage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LogMessage" EntityType="KjqbServiceModel.Store.LogMessage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ScheduleMessage" EntityType="KjqbServiceModel.Store.ScheduleMessage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TimeArrangeForManagerMessage" EntityType="KjqbServiceModel.Store.TimeArrangeForManagerMessage" store:Type="Tables" Schema="dbo" />
-        </EntityContainer>
+      <Schema Namespace="KjqbServiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BusinessMessage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ReceiveID" Type="bigint" />
           <Property Name="BusinessID" Type="bigint" />
-          <Property Name="TimeStamp" Type="numeric" />
+          <Property Name="TimeStamp" Type="numeric" Precision="18" Scale="0" />
           <Property Name="Type" Type="int" />
           <Property Name="State" Type="int" />
           <Property Name="IsRead" Type="int" />
@@ -30,23 +21,23 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="State" Type="int" />
           <Property Name="IsRead" Type="int" />
-          <Property Name="ReceiveUserId" Type="numeric" />
-          <Property Name="SendUserId" Type="numeric" />
+          <Property Name="ReceiveUserId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SendUserId" Type="numeric" Precision="18" Scale="0" />
           <Property Name="ChatContent" Type="varchar(max)" />
-          <Property Name="TimeStamp" Type="numeric" />
+          <Property Name="TimeStamp" Type="numeric" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CommentMessage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LogId" Type="bigint" />
           <Property Name="UserId" Type="bigint" />
           <Property Name="CommentUserName" Type="varchar" MaxLength="50" />
-          <Property Name="TimeStamp" Type="numeric" />
+          <Property Name="TimeStamp" Type="numeric" Precision="18" Scale="0" />
           <Property Name="State" Type="int" />
           <Property Name="IsRead" Type="int" />
         </EntityType>
@@ -54,24 +45,24 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LeaveId" Type="bigint" />
           <Property Name="UserId" Type="bigint" />
           <Property Name="SendUserId" Type="bigint" />
           <Property Name="State" Type="int" />
           <Property Name="IsRead" Type="int" />
-          <Property Name="TimeStamp" Type="numeric" />
+          <Property Name="TimeStamp" Type="numeric" Precision="18" Scale="0" />
           <Property Name="ExamineOrExamineResult" Type="int" />
         </EntityType>
         <EntityType Name="LogMessage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LogId" Type="bigint" />
           <Property Name="ShareUserId" Type="bigint" />
           <Property Name="UserId" Type="bigint" />
-          <Property Name="TimeStamp" Type="numeric" />
+          <Property Name="TimeStamp" Type="numeric" Precision="18" Scale="0" />
           <Property Name="State" Type="int" />
           <Property Name="IsRead" Type="int" />
         </EntityType>
@@ -79,222 +70,232 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="bigint" />
           <Property Name="ShareUserID" Type="bigint" />
           <Property Name="ScheduleID" Type="bigint" />
           <Property Name="State" Type="int" />
-          <Property Name="TimeStamp" Type="numeric" />
+          <Property Name="TimeStamp" Type="numeric" Precision="18" Scale="0" />
           <Property Name="IsRead" Type="int" />
         </EntityType>
         <EntityType Name="TimeArrangeForManagerMessage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TimeArrangeForManagerId" Type="bigint" />
           <Property Name="UserId" Type="bigint" />
           <Property Name="State" Type="int" />
           <Property Name="IsRead" Type="int" />
           <Property Name="SendUserId" Type="bigint" />
-          <Property Name="TimeStamp" Type="numeric" />
+          <Property Name="TimeStamp" Type="numeric" Precision="18" Scale="0" />
           <Property Name="ExamineOrExamineResult" Type="int" />
         </EntityType>
-      </Schema></edmx:StorageModels>
+        <EntityContainer Name="KjqbServiceModelStoreContainer">
+          <EntitySet Name="BusinessMessage" EntityType="Self.BusinessMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChatMessage" EntityType="Self.ChatMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommentMessage" EntityType="Self.CommentMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeaveMessage" EntityType="Self.LeaveMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogMessage" EntityType="Self.LogMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScheduleMessage" EntityType="Self.ScheduleMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeArrangeForManagerMessage" EntityType="Self.TimeArrangeForManagerMessage" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="KjqbServiceModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="KjqbServiceEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="LogMessages" EntityType="KjqbServiceModel.LogMessage" />
-          <EntitySet Name="ScheduleMessages" EntityType="KjqbServiceModel.ScheduleMessage" />
-          <EntitySet Name="CommentMessages" EntityType="KjqbServiceModel.CommentMessage" />
-          <EntitySet Name="TimeArrangeForManagerMessages" EntityType="KjqbServiceModel.TimeArrangeForManagerMessage" />
-          <EntitySet Name="LeaveMessages" EntityType="KjqbServiceModel.LeaveMessage" />
-          <EntitySet Name="BusinessMessages" EntityType="KjqbServiceModel.BusinessMessage" />
-          <EntitySet Name="ChatMessages" EntityType="KjqbServiceModel.ChatMessage" />
-        </EntityContainer>
-        <EntityType Name="LogMessage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="LogId" Type="Int64" />
-          <Property Name="ShareUserId" Type="Int64" />
-          <Property Name="UserId" Type="Int64" />
-          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="State" />
-          <Property Type="Int32" Name="IsRead" />
-        </EntityType>
-        <EntityType Name="ScheduleMessage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int64" Name="ScheduleID" />
-          <Property Type="Int64" Name="UserID" />
-          <Property Type="Int64" Name="ShareUserID" />
-          <Property Type="Int32" Name="State" />
-          <Property Type="Decimal" Name="TimeStamp" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="IsRead" />
-        </EntityType>
-        <EntityType Name="CommentMessage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int64" Name="LogId" />
-          <Property Type="Int64" Name="UserId" />
-          <Property Type="String" Name="CommentUserName" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="TimeStamp" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="State" />
-          <Property Type="Int32" Name="IsRead" />
-        </EntityType>
-        <EntityType Name="TimeArrangeForManagerMessage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int64" Name="TimeArrangeForManagerId" />
-          <Property Type="Int64" Name="UserId" />
-          <Property Type="Int32" Name="State" />
-          <Property Type="Int32" Name="IsRead" />
-          <Property Type="Int64" Name="SendUserId" />
-          <Property Type="Decimal" Name="TimeStamp" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="ExamineOrExamineResult" />
-        </EntityType>
-        <EntityType Name="LeaveMessage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int64" Name="LeaveId" />
-          <Property Type="Int64" Name="UserId" />
-          <Property Type="Int64" Name="SendUserId" />
-          <Property Type="Int32" Name="State" />
-          <Property Type="Int32" Name="IsRead" />
-          <Property Type="Decimal" Name="TimeStamp" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="ExamineOrExamineResult" />
-        </EntityType>
+      <Schema Namespace="KjqbServiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="BusinessMessage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int64" Name="ReceiveID" />
-          <Property Type="Int64" Name="BusinessID" />
-          <Property Type="Decimal" Name="TimeStamp" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="Type" />
-          <Property Type="Int32" Name="State" />
-          <Property Type="Int32" Name="IsRead" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiveID" Type="Int64" />
+          <Property Name="BusinessID" Type="Int64" />
+          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="IsRead" Type="Int32" />
         </EntityType>
         <EntityType Name="ChatMessage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="State" />
-          <Property Type="Int32" Name="IsRead" />
-          <Property Type="Decimal" Name="ReceiveUserId" Precision="18" Scale="0" />
-          <Property Type="Decimal" Name="SendUserId" Precision="18" Scale="0" />
-          <Property Type="String" Name="ChatContent" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="TimeStamp" Precision="18" Scale="0" />
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="IsRead" Type="Int32" />
+          <Property Name="ReceiveUserId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SendUserId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ChatContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
+        <EntityType Name="CommentMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogId" Type="Int64" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="CommentUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="IsRead" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LeaveMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeaveId" Type="Int64" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="SendUserId" Type="Int64" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="IsRead" Type="Int32" />
+          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ExamineOrExamineResult" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LogMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogId" Type="Int64" />
+          <Property Name="ShareUserId" Type="Int64" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="IsRead" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ScheduleMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="ShareUserID" Type="Int64" />
+          <Property Name="ScheduleID" Type="Int64" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsRead" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TimeArrangeForManagerMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeArrangeForManagerId" Type="Int64" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="IsRead" Type="Int32" />
+          <Property Name="SendUserId" Type="Int64" />
+          <Property Name="TimeStamp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ExamineOrExamineResult" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="KjqbServiceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BusinessMessages" EntityType="Self.BusinessMessage" />
+          <EntitySet Name="ChatMessages" EntityType="Self.ChatMessage" />
+          <EntitySet Name="CommentMessages" EntityType="Self.CommentMessage" />
+          <EntitySet Name="LeaveMessages" EntityType="Self.LeaveMessage" />
+          <EntitySet Name="LogMessages" EntityType="Self.LogMessage" />
+          <EntitySet Name="ScheduleMessages" EntityType="Self.ScheduleMessage" />
+          <EntitySet Name="TimeArrangeForManagerMessages" EntityType="Self.TimeArrangeForManagerMessage" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KjqbServiceModelStoreContainer" CdmEntityContainer="KjqbServiceEntities">
-          <EntitySetMapping Name="LogMessages">
-            <EntityTypeMapping TypeName="KjqbServiceModel.LogMessage">
-              <MappingFragment StoreEntitySet="LogMessage">
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="LogId" ColumnName="LogId" />
-                <ScalarProperty Name="ShareUserId" ColumnName="ShareUserId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ScheduleMessages">
-            <EntityTypeMapping TypeName="KjqbServiceModel.ScheduleMessage">
-              <MappingFragment StoreEntitySet="ScheduleMessage">
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="ShareUserID" ColumnName="ShareUserID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CommentMessages">
-            <EntityTypeMapping TypeName="KjqbServiceModel.CommentMessage">
-              <MappingFragment StoreEntitySet="CommentMessage">
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="CommentUserName" ColumnName="CommentUserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LogId" ColumnName="LogId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TimeArrangeForManagerMessages">
-            <EntityTypeMapping TypeName="KjqbServiceModel.TimeArrangeForManagerMessage">
-              <MappingFragment StoreEntitySet="TimeArrangeForManagerMessage">
-                <ScalarProperty Name="ExamineOrExamineResult" ColumnName="ExamineOrExamineResult" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="SendUserId" ColumnName="SendUserId" />
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="TimeArrangeForManagerId" ColumnName="TimeArrangeForManagerId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LeaveMessages">
-            <EntityTypeMapping TypeName="KjqbServiceModel.LeaveMessage">
-              <MappingFragment StoreEntitySet="LeaveMessage">
-                <ScalarProperty Name="ExamineOrExamineResult" ColumnName="ExamineOrExamineResult" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="SendUserId" ColumnName="SendUserId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BusinessMessages">
             <EntityTypeMapping TypeName="KjqbServiceModel.BusinessMessage">
               <MappingFragment StoreEntitySet="BusinessMessage">
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
-                <ScalarProperty Name="ReceiveID" ColumnName="ReceiveID" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReceiveID" ColumnName="ReceiveID" />
+                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChatMessages">
             <EntityTypeMapping TypeName="KjqbServiceModel.ChatMessage">
               <MappingFragment StoreEntitySet="ChatMessage">
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="ChatContent" ColumnName="ChatContent" />
-                <ScalarProperty Name="SendUserId" ColumnName="SendUserId" />
-                <ScalarProperty Name="ReceiveUserId" ColumnName="ReceiveUserId" />
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="ReceiveUserId" ColumnName="ReceiveUserId" />
+                <ScalarProperty Name="SendUserId" ColumnName="SendUserId" />
+                <ScalarProperty Name="ChatContent" ColumnName="ChatContent" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentMessages">
+            <EntityTypeMapping TypeName="KjqbServiceModel.CommentMessage">
+              <MappingFragment StoreEntitySet="CommentMessage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CommentUserName" ColumnName="CommentUserName" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveMessages">
+            <EntityTypeMapping TypeName="KjqbServiceModel.LeaveMessage">
+              <MappingFragment StoreEntitySet="LeaveMessage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SendUserId" ColumnName="SendUserId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="ExamineOrExamineResult" ColumnName="ExamineOrExamineResult" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogMessages">
+            <EntityTypeMapping TypeName="KjqbServiceModel.LogMessage">
+              <MappingFragment StoreEntitySet="LogMessage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+                <ScalarProperty Name="ShareUserId" ColumnName="ShareUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleMessages">
+            <EntityTypeMapping TypeName="KjqbServiceModel.ScheduleMessage">
+              <MappingFragment StoreEntitySet="ScheduleMessage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ShareUserID" ColumnName="ShareUserID" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeArrangeForManagerMessages">
+            <EntityTypeMapping TypeName="KjqbServiceModel.TimeArrangeForManagerMessage">
+              <MappingFragment StoreEntitySet="TimeArrangeForManagerMessage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TimeArrangeForManagerId" ColumnName="TimeArrangeForManagerId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="SendUserId" ColumnName="SendUserId" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="ExamineOrExamineResult" ColumnName="ExamineOrExamineResult" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -312,8 +313,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
       </DesignerInfoPropertySet>
     </Options>

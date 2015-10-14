@@ -19,7 +19,7 @@ namespace KjqbService.DB
             schMess.IsRead = 0;
             context.ScheduleMessages.Add(schMess);
             context.SaveChanges();
-            return schMess.Id;
+            return int.Parse(schMess.Id.ToString());
         }
         public List<ScheduleMessage> SendSharedSchedule(long l)
         {

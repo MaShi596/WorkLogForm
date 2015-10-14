@@ -133,5 +133,10 @@ namespace KjqbService
         List<ChatInService> SearchChatHistory(int receiveId, int sendid, DateTime endtime);
 
         #endregion
+
+        #region 迅雷离线相关 
+        [OperationContract]
+        bool OpenThunder(string thunderurl);
+        #endregion
     }
 }

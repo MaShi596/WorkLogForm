@@ -25,12 +25,12 @@ namespace KjqbService.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<LogMessage> LogMessages { get; set; }
-        public DbSet<ScheduleMessage> ScheduleMessages { get; set; }
-        public DbSet<CommentMessage> CommentMessages { get; set; }
-        public DbSet<TimeArrangeForManagerMessage> TimeArrangeForManagerMessages { get; set; }
-        public DbSet<LeaveMessage> LeaveMessages { get; set; }
         public DbSet<BusinessMessage> BusinessMessages { get; set; }
         public DbSet<ChatMessage> ChatMessages { get; set; }
+        public DbSet<CommentMessage> CommentMessages { get; set; }
+        public DbSet<LeaveMessage> LeaveMessages { get; set; }
+        public DbSet<LogMessage> LogMessages { get; set; }
+        public DbSet<ScheduleMessage> ScheduleMessages { get; set; }
+        public DbSet<TimeArrangeForManagerMessage> TimeArrangeForManagerMessages { get; set; }
     }
 }
